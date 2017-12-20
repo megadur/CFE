@@ -1,0 +1,36 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+/* You can add global styles to this file, and also import other style files */
+body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.dl-horizontal-gap-lg dt {
+  width: 180px !important;
+}
+
+.dl-horizontal-gap-lg dd {
+  margin-left: 180px;
+}
+
+dl
+{
+    width: 300px;
+}
+
+dt
+{
+    float: left;
+    width: 150px;
+}
+
+dd
+{
+    float: right;
+    text-align: left;
+    width: 150px;
+}

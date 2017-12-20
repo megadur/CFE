@@ -1,0 +1,31 @@
+<p>
+  account-detail works!
+</p>
+<div *ngIf="account">
+  <h2>{{ account.GUID | uppercase }} Details</h2>
+  <div><span>id: </span>{{account.TONR}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="account.name" placeholder="name"/>
+    </label>
+  </div>
+      <!-- GUID, TO-Nr, KdNr, Status -->
+        <div class="col-md-5">
+          <dl class="dl-horizontal dl-horizontal-left">
+            <dt id="guid">GUID</dt>
+            <dd role="defintion" aria-labelledBy="guid">{{account.GUID}}</dd>
+            <dt id="tonr">TO-Nummer</dt>
+            <dd role="definition" aria-labelledBy="tonr">{{account.TO_NR}}</dd>
+            <dt id="kdnr">Kundennummer</dt>
+            <dd role="definition" aria-labelledBy="kdnr">{{account.KDNR}}</dd>
+            <dd role="definition" aria-labelledBy="kdnr">
+              <small>Neu: --</small>
+            </dd>
+            <dd role="definition" aria-labelledBy="kdnr">
+              <small>Alt: --</small>
+            </dd>
+            <dt id="status">Status</dt>
+            <dd role="definition" aria-labelledBy="status">aktiviert</dd>
+          </dl>
+        </div>
+</div>

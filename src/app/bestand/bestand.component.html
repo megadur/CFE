@@ -1,0 +1,12 @@
+<p>
+  bestand works!
+</p>
+<h2>My Bestand</h2>
+
+<ul class="list-group">
+  <li *ngFor="let b of bestand" class="list-group-item d-flex justify-content-between align-items-center">
+    <a routerLink="/bestand-detail/{{b.id}}">
+      <span class="badge badge-primary badge-pill">{{b.id}}</span> {{b.name}}
+    </a>
+  </li>
+</ul>
