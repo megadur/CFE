@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BESTAND } from '../bestand-mock';
+import { BESTAND } from '../service/bestand-mock';
 
 @Component({
   selector: 'app-bestand',

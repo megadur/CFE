@@ -12,9 +12,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccountDetailComponent } from './account-detail/account-detail.component';
 import { BestandDetailComponent } from './bestand-detail/bestand-detail.component';
 
-import { AccountService } from './account.service';
+import { AccountService } from './service/account.service';
 import { MessagesComponent } from './messages/messages.component';
-import { MessageService } from './message.service';
+import { MessageService } from './service/message.service';
 
 @NgModule({
   declarations: [

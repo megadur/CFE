@@ -1,4 +1,4 @@
-import { Bestand } from './bestand';
+import { Bestand } from '../model/bestand';
 
 export const BESTAND: Bestand[] = [
   { id: 11, name: 'Mr. Nice' },

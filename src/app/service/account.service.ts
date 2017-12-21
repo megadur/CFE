@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
 import { ACCOUNT  } from './account-mock';
-import { Account } from './account';
+import { Account } from '../model/account';
 import { MessageService } from './message.service';
 
 @Injectable()
