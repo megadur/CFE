@@ -15,6 +15,13 @@ import { BestandDetailComponent } from './comp/bestand-detail/bestand-detail.com
 import { AccountService } from './service/account.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './service/message.service';
+import { SnEinzelComponent } from './comp/sn-einzel/sn-einzel.component';
+import { SnListeComponent } from './comp/sn-liste/sn-liste.component';
+import { AuswertungComponent } from './comp/auswertung/auswertung.component';
+import { KonfigurationComponent } from './comp/konfiguration/konfiguration.component';
+import { KampagneComponent } from './comp/kampagne/kampagne.component';
+import { NutzermgmtComponent } from './comp/nutzermgmt/nutzermgmt.component';
+import { LoginComponent } from './comp/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +33,14 @@ import { MessageService } from './service/message.service';
     DashboardComponent,
     AccountDetailComponent,
     BestandDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    SnEinzelComponent,
+    SnListeComponent,
+    AuswertungComponent,
+    KonfigurationComponent,
+    KampagneComponent,
+    NutzermgmtComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
