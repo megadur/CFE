@@ -3,7 +3,7 @@
   <h2>My Account</h2>
   <ul class="list-group">
     <li *ngFor="let a of accountlist" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="a === selectedAccount" (click)="onSelect(a)"> <a routerLink="/account/{{a.id}}">
-      <span class="badge badge-primary badge-pill">{{a.id}}</span> {{a.name}}
+      <span class="badge badge-primary badge-pill">{{a.id}}</span> {{a.GUID}}
     </a> </li>
   </ul>
   <div *ngIf="selectedAccount"> {{selectedAccount.id}} </div>

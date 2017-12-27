@@ -22,6 +22,8 @@ export class AccountComponent implements OnInit {
     this.selectedAccount = account;
   }
   getAccountList(): void {
+    console.log("getAccountList()")
+
     this.accountService.getAccountList()
         .subscribe(accounts => this.accountlist = accounts);
   }

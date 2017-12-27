@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { HttpClientModule }    from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,7 +14,7 @@ import { AccountDetailComponent } from './comp/account-detail/account-detail.com
 import { BestandDetailComponent } from './comp/bestand-detail/bestand-detail.component';
 
 import { AccountService } from './service/account.service';
-import { MessagesComponent } from './messages/messages.component';
+import { MessagesComponent } from './comp/messages/messages.component';
 import { MessageService } from './service/message.service';
 import { SnEinzelComponent } from './comp/sn-einzel/sn-einzel.component';
 import { SnListeComponent } from './comp/sn-liste/sn-liste.component';
@@ -45,6 +46,7 @@ import { LoginComponent } from './comp/login/login.component';
   imports: [
     BrowserModule,
       FormsModule,
+      HttpClientModule,
     AppRoutingModule
   ],
   providers: [AccountService, MessageService],
