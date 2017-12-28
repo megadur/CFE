@@ -32,6 +32,16 @@ export const ACCOUNT: Account[] = [
         "TS_LAST_PROV_SPERRE": null,
         "KDNR_OLD": null,
         "ACCOUNT_TYPE_ID": 1,
-        "LAST_UPD": "2017-08-06T23:00:00.000Z"
+        "LAST_UPD": "2017-08-06T23:00:00.000Z",
+        emlist: null,
+        emselected: null,
+        rnrlist: null,
+        rnrselected: null,
+        sprlist: null,
+        sprselected: null,
+        inslist: null,
+        insselected: null,
+        parlist: null,
+        parselected: null
     }
 ];

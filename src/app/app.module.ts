@@ -53,3 +53,6 @@ import { LoginComponent } from './comp/login/login.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+/*
+ng serve
+*/

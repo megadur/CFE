@@ -1,3 +1,8 @@
+import { Em } from './em';
+import { Rnr } from './rnr';
+import { Spr } from './spr';
+import { Ins } from './ins';
+import { Par } from './par';
 export class Account {
   id: number;
   name: string;
@@ -18,5 +23,14 @@ export class Account {
   KDNR_OLD: string;
   ACCOUNT_TYPE_ID: number;
   LAST_UPD: string;
-
+  emlist: Em[];
+  emselected: Em;
+  rnrlist: Rnr[];
+  rnrselected: Rnr;
+  sprlist: Spr[];
+  sprselected: Spr;
+  inslist: Ins[];
+  insselected: Ins;
+  parlist: Par[];
+  parselected: Par;
 }

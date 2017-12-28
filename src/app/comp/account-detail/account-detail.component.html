@@ -1,31 +1,95 @@
 <p>
-  account-detail works!
+  account-detail works!{{ counter }}
 </p>
 <div *ngIf="account">
   <h2>{{ account.GUID | uppercase }} Details</h2>
-  <div><span>id: </span>{{account.TONR}}</div>
   <div>
-    <label>name:
-      <input [(ngModel)]="account.name" placeholder="name"/>
-    </label>
+    <span>TONR: </span>{{account.TONR}}</div>
+
+  <div class="form-group">
+    <label for="guid">GUID:</label>
+    <input type="text" class="form-control" id="guid" [(ngModel)]="inp" placeholder="a GUID">
+    <button type="button" class="btn btn-default" (click)="getAccount()">getAccount</button>
   </div>
-      <!-- GUID, TO-Nr, KdNr, Status -->
-        <div class="col-md-5">
-          <dl class="dl-horizontal dl-horizontal-left">
-            <dt id="guid">GUID</dt>
-            <dd role="defintion" aria-labelledBy="guid">{{account.GUID}}</dd>
-            <dt id="tonr">TO-Nummer</dt>
-            <dd role="definition" aria-labelledBy="tonr">{{account.TO_NR}}</dd>
-            <dt id="kdnr">Kundennummer</dt>
-            <dd role="definition" aria-labelledBy="kdnr">{{account.KDNR}}</dd>
-            <dd role="definition" aria-labelledBy="kdnr">
-              <small>Neu: --</small>
-            </dd>
-            <dd role="definition" aria-labelledBy="kdnr">
-              <small>Alt: --</small>
-            </dd>
-            <dt id="status">Status</dt>
-            <dd role="definition" aria-labelledBy="status">aktiviert</dd>
-          </dl>
-        </div>
+  100049016041212390100001
+  <button type="button" class="btn btn-default" (click)="redraw()">redraw</button>
+  <!-- GUID, TO-Nr, KdNr, Status -->
+  <div class="col-md-5">
+    <dl class="dl-horizontal dl-horizontal-left">
+      <dt id="guid">GUID</dt>
+      <dd role="defintion" aria-labelledBy="guid">{{account.GUID}}</dd>
+      <dt id="tonr">TO-Nummer</dt>
+      <dd role="definition" aria-labelledBy="tonr">{{account.TO_NR}}</dd>
+      <dt id="kdnr">Kundennummer</dt>
+      <dd role="definition" aria-labelledBy="kdnr">{{account.KDNR}}</dd>
+      <dd role="definition" aria-labelledBy="kdnr">
+        <small>Neu: --</small>
+      </dd>
+      <dd role="definition" aria-labelledBy="kdnr">
+        <small>Alt: --</small>
+      </dd>
+      <dt id="status">Status</dt>
+      <dd role="definition" aria-labelledBy="status">aktiviert</dd>
+    </dl>
+  </div>
+  <div class="col">
+    <h2>Bestand</h2>
+    <ul id="atabs" class="nav nav-tabs" data-tabs="atabs">
+      <li class="nav-item active">
+        <a class="nav-link" href="#red1" data-toggle="tab">Red</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#orange1" data-toggle="tab">Orange</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#yellow1" data-toggle="tab">Yellow</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#green1" data-toggle="tab">Green</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#blue1" data-toggle="tab">Blue</a>
+      </li>
+    </ul>
+    <div id="my-tab-content" class="tab-content">
+      <div class="tab-pane active" id="red1">
+        <h1>Red</h1>
+        <p>red red red red red red</p>
+
+        <ul class="list-group">
+          <li *ngFor="let e of account.emlist" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="e === emselected"
+            (click)="onSelect(e)">
+            <a routerLink="/account/{{e.STOCK_ID}}">
+              <span class="badge badge-primary badge-pill">{{e.STOCK_ID}}</span> {{e.EM_MATNO}}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-pane" id="orange1">
+        <h1>Orange</h1>
+        <p>orange orange orange orange orange</p>
+      </div>
+      <div class="tab-pane" id="yellow1">
+        <h1>Yellow</h1>
+        <p>yellow yellow yellow yellow yellow</p>
+      </div>
+      <div class="tab-pane" id="green1">
+        <h1>Green</h1>
+        <p>green green green green green</p>
+      </div>
+      <div class="tab-pane" id="blue1">
+        <h1>Blue</h1>
+        <p>blue blue blue blue blue</p>
+      </div>
+    </div>
+
+    <div *ngIf="account">Selected Acc {{account.GUID}}
+      <div *ngIf="account.ems">Selected EM {{account.ems}}
+      </div>
+    </div>
+    <button type="button" class="btn btn-default" (click)="getEmList()">getEmList</button>
+
+
+
+  </div>
 </div>
