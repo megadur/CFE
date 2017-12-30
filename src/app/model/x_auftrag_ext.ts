@@ -1,4 +1,4 @@
-export class x_auftrag_ext {
+export class XAuftragExt {
     name: string;
 	EO_ID:string;
 	ORDER_ID_CRM:string;

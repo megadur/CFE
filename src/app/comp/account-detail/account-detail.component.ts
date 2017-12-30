@@ -12,7 +12,7 @@ import { AccountService } from '../../service/account.service';
 })
 export class AccountDetailComponent implements OnInit {
   @Input() account: Account;
-   inp: string;
+  inp: string;
   counter = 0;
   constructor(private accountService: AccountService) { }
 
@@ -25,20 +25,20 @@ export class AccountDetailComponent implements OnInit {
     if (this.account)
       this.accountService.getEmList(this.account.GUID)
         .subscribe(ems => this.account.emlist = ems);
-  }; 
+  };
   getParList(): void {
     //console.log("AccountDetailComponent: getEmList()")
     if (this.account)
       this.accountService.getParList(this.account.GUID)
         .subscribe(x => this.account.parlist = x);
   };
-     getSprList(): void {
+  getSprList(): void {
     //console.log("AccountDetailComponent: getEmList()")
     if (this.account)
       this.accountService.getSprList(this.account.GUID)
         .subscribe(x => this.account.sprlist = x);
   };
-     getRnrList(): void {
+  getRnrList(): void {
     //console.log("AccountDetailComponent: getEmList()")
     if (this.account)
       this.accountService.getRnrList(this.account.GUID)
@@ -59,7 +59,7 @@ export class AccountDetailComponent implements OnInit {
     this.getRnrList();
     this.getSprList();
     this.getInsList();
-    
+
   }
   getAccount(): void {
     console.log("ADC: getAccount() in " + this.inp);
@@ -71,6 +71,6 @@ export class AccountDetailComponent implements OnInit {
           this.counter++; // application state changed
         })
     //      .subscribe(a => this.account = a);
-   }
+  }
 
 }

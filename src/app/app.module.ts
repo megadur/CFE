@@ -14,6 +14,9 @@ import { AccountDetailComponent } from './comp/account-detail/account-detail.com
 import { BestandDetailComponent } from './comp/bestand-detail/bestand-detail.component';
 
 import { AccountService } from './service/account.service';
+import { XBestandService } from './service/xbestand.service';
+import { XAuftragService } from './service/xauftrag.service';
+
 import { MessagesComponent } from './comp/messages/messages.component';
 import { MessageService } from './service/message.service';
 import { SnEinzelComponent } from './comp/sn-einzel/sn-einzel.component';
@@ -23,7 +26,8 @@ import { KonfigurationComponent } from './comp/konfiguration/konfiguration.compo
 import { KampagneComponent } from './comp/kampagne/kampagne.component';
 import { NutzermgmtComponent } from './comp/nutzermgmt/nutzermgmt.component';
 import { LoginComponent } from './comp/login/login.component';
-import { XbestandComponent } from './comp/xbestand/xbestand.component';
+import { XBestandComponent } from './comp/xbestand/xbestand.component';
+import { XAuftragComponent } from './comp/xauftrag/xauftrag.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,8 @@ import { XbestandComponent } from './comp/xbestand/xbestand.component';
     KampagneComponent,
     NutzermgmtComponent,
     LoginComponent,
-    XbestandComponent
+    XBestandComponent,
+    XAuftragComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,7 @@ import { XbestandComponent } from './comp/xbestand/xbestand.component';
       HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AccountService, MessageService],
+  providers: [AccountService, MessageService, XBestandService, XAuftragService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

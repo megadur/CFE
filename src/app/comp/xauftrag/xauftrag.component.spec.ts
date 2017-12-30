@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { XBestandComponent } from './xbestand.component';
+import { XauftragComponent } from './xauftrag.component';
 
-describe('XBestandComponent', () => {
-  let component: XBestandComponent;
-  let fixture: ComponentFixture<XBestandComponent>;
+describe('XauftragComponent', () => {
+  let component: XauftragComponent;
+  let fixture: ComponentFixture<XauftragComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ XBestandComponent ]
+      declarations: [ XauftragComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(XBestandComponent);
+    fixture = TestBed.createComponent(XauftragComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

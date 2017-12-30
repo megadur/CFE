@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { XbestandService } from './xbestand.service';
+import { XBestandService } from './xbestand.service';
 
 describe('XbestandService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [XbestandService]
+      providers: [XBestandService]
     });
   });
 
-  it('should be created', inject([XbestandService], (service: XbestandService) => {
+  it('should be created', inject([XBestandService], (service: XBestandService) => {
     expect(service).toBeTruthy();
   }));
 });

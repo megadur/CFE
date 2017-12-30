@@ -1,4 +1,4 @@
-export class x_auftrag {
+export class XAuftrag {
     name: string;
 	SO_ID:string;
 	EO_ID:string;

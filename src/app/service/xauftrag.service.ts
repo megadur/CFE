@@ -17,11 +17,11 @@ const httpOptions = {
 
 
 @Injectable()
-export class XBestandService {
+export class XAuftragService {
 
 
   //  private sUrl = 'api/heroes';  // URL to web api
-  private sUrl = 'http://localhost:3300/bestand';  // URL to web api
+  private sUrl = 'http://localhost:3300/auftrag';  // URL to web api
   a: Observable<Account>;
   constructor(
     private http: HttpClient,
@@ -29,7 +29,26 @@ export class XBestandService {
 
 
 
-
+  /** GET Account by guid. Will 404 if id not found */
+  getXAccInfoList(guid: string): Observable<XAccountInfo[]> {
+    const url = `${this.sUrl}/${guid}/XAccountInfo`;
+    return this.http.get<XAccountInfo[]>(url)
+      .pipe(
+      tap(_ => this.log(`fetched XAccountInfos for ${guid}`)),
+      catchError(this.handleError<XAccountInfo[]>(`getXAccountInfo id=${guid}`))
+      );
+  }
+  //XHisAuftrag
+  /** GET Account by guid. Will 404 if id not found */
+  getXHisAuftragList(guid: string): Observable<XHisAuftrag[]> {
+    this.log("getXHisAuftragList")
+    const url = `${this.sUrl}/${guid}/XHisAuftrag`;
+    return this.http.get<XHisAuftrag[]>(url)
+      .pipe(
+      tap(_ => this.log(`fetched XHisAuftrags for ${guid}`)),
+      catchError(this.handleError<XHisAuftrag[]>(`getXHisAuftrag id=${guid}`))
+      );
+  }
 
   /**
    * Handle Http operation that failed.

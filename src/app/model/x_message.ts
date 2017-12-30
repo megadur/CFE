@@ -1,4 +1,4 @@
-export class x_message {
+export class XMessage {
     name: string;
 	ID:number;
 	EO_ID:string;
