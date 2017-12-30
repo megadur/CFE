@@ -3,8 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Account } from '../../model/account';
-import { XBestandService } from '../../service/xbestand.service';
+import { Account } from '../../../model/account';
+import { XBestandService } from '../../../service/xbestand.service';
 
 @Component({
   selector: 'app-xbestand',

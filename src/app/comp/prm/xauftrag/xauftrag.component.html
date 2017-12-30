@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col">
+    <h1>XAuftrag</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="guid" style="width: 220px;">GUID:</label>
+        <input type="text" class="form-control" id="guid" [(ngModel)]="inp" [ngModelOptions]="{standalone: true}" placeholder="GUID, KDNR, TO-NR"
+          style="width: 420px;">
+        <button type="button" class="btn btn-default" (click)="getXHisAuftragList()">XHisAuftrag</button>
+        <button type="button" class="btn btn-default" (click)="getXAuftragList()">XAuftrag</button>
+        <button type="button" class="btn btn-default" (click)="getXAuftragExtList()">XAuftragExt</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <h2>XHisAuftrag</h2>
+    <ul class="list-group">
+      <li *ngFor="let a of XHisAuftrag_list" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="a === selected_XHisAuftrag"
+        (click)="onSelect(a)">
+        <a routerLink="/account/{{a.id}}">
+          <span class="badge badge-primary badge-pill">{{a.id}}</span> Ext:{{a.EO_ID}}, Int:{{a.SO_ID}}
+        </a>
+      </li>
+    </ul>
+    <div *ngIf="selected_XHisAuftrag"> {{selected_XHisAuftrag.id}} </div>
+  </div>
+  <!--
+  -->
+  <div class="col-6">
+    <app-xauftrag-his-detail [xHisAuftrag]="selected_XHisAuftrag"></app-xauftrag-his-detail>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <h2>XAuftrag</h2>
+    <ul class="list-group">
+      <li *ngFor="let a of XAuftrag_list" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="a === selected_XAuftrag"
+        (click)="onSelect(a)">
+        <a routerLink="/auftrag/{{a.id}}/ext">
+          <span class="badge badge-primary badge-pill">{{a.id}}</span> Ext:{{a.EO_ID}}
+        </a>
+        <a routerLink="/auftrag/{{a.id}}/int">
+          <span class="badge badge-primary badge-pill">{{a.id}}</span> Int:{{a.SO_ID}}
+        </a>
+      </li>
+    </ul>
+    <div *ngIf="selected_XAuftrag"> {{selected_XAuftrag.id}} </div>
+  </div>
+  <!--
+    -->
+  <div class="col-6">
+    <app-xauftrag-detail [xAuftrag]="selected_XAuftrag"></app-xauftrag-detail>
+  </div>
+
+</div>

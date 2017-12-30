@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProduktComponent } from './produkt.component';
+import { XerrorDetailComponent } from './xerror-detail.component';
 
-describe('ProduktComponent', () => {
-  let component: ProduktComponent;
-  let fixture: ComponentFixture<ProduktComponent>;
+describe('XerrorDetailComponent', () => {
+  let component: XerrorDetailComponent;
+  let fixture: ComponentFixture<XerrorDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProduktComponent ]
+      declarations: [ XerrorDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProduktComponent);
+    fixture = TestBed.createComponent(XerrorDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

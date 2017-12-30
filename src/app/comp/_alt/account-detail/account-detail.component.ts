@@ -2,8 +2,8 @@ import { OnInit, Component, Input, SimpleChanges } from '@angular/core'
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Account } from '../../model/account';
-import { AccountService } from '../../service/account.service';
+import { Account } from '../../../model/account';
+import { AccountService } from '../../../service/account.service';
 
 @Component({
   selector: 'app-account-detail',

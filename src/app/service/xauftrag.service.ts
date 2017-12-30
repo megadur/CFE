@@ -7,6 +7,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { XAccountInfo } from '../model/x_account_info';
 import { XHisAuftrag } from '../model/x_his_auftrag';
+import { XAuftrag } from '../model/x_auftrag';
+import { XAuftragExt } from '../model/x_auftrag_ext';
 
 import { MessageService } from './message.service';
 
@@ -50,6 +52,28 @@ export class XAuftragService {
       );
   }
 
+  /** GET XAuftrag by guid. Will 404 if id not found */
+  getXAuftragList(guid: string): Observable<XAuftrag[]> {
+    this.log("getXAuftragList")
+    const url = `${this.sUrl}/${guid}/XAuftrag`;
+    return this.http.get<XAuftrag[]>(url)
+      .pipe(
+      tap(_ => this.log(`fetched XAuftrags for ${guid}`)),
+      catchError(this.handleError<XAuftrag[]>(`getXAuftrag id=${guid}`))
+      );
+  }
+
+  //
+  /** GET XAuftragExt by guid. Will 404 if id not found */
+  getXAuftragExtList(guid: string): Observable<XAuftragExt[]> {
+    this.log("getXAuftragExtList")
+    const url = `${this.sUrl}/${guid}/XAuftragExt`;
+    return this.http.get<XAuftragExt[]>(url)
+      .pipe(
+      tap(_ => this.log(`fetched XAuftragExts for ${guid}`)),
+      catchError(this.handleError<XAuftragExt[]>(`getXAuftragExt id=${guid}`))
+      );
+  }
   /**
    * Handle Http operation that failed.
    * Let the app continue.
