@@ -11,55 +11,82 @@
         <label for="guid" style="width: 220px;">GUID:</label>
         <input type="text" class="form-control" id="guid" [(ngModel)]="inp" [ngModelOptions]="{standalone: true}" placeholder="GUID, KDNR, TO-NR"
           style="width: 420px;">
-        <button type="button" class="btn btn-default" (click)="getXHisAuftragList()">XHisAuftrag</button>
-        <button type="button" class="btn btn-default" (click)="getXAuftragList()">XAuftrag</button>
-        <button type="button" class="btn btn-default" (click)="getXAuftragExtList()">XAuftragExt</button>
-      </div>
+        </div>
     </form>
   </div>
 </div>
-
 <div class="row">
   <div class="col-6">
-    <h2>XHisAuftrag</h2>
-    <ul class="list-group">
-      <li *ngFor="let a of XHisAuftrag_list" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="a === selected_XHisAuftrag"
-        (click)="onSelect(a)">
-        <a routerLink="/account/{{a.id}}">
-          <span class="badge badge-primary badge-pill">{{a.id}}</span> Ext:{{a.EO_ID}}, Int:{{a.SO_ID}}
-        </a>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="XHisAuftrag-tab" data-toggle="tab" href="#XHisAuftrag" role="tab" aria-controls="XHisAuftrag" aria-selected="true">XHisAuftrag</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="XAuftrag-tab" data-toggle="tab" href="#XAuftrag" role="tab" aria-controls="XAuftrag" aria-selected="false">XAuftrag</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="XAuftragExt-tab" data-toggle="tab" href="#XAuftragExt" role="tab" aria-controls="XAuftragExt" aria-selected="false">XAuftragExt</a>
       </li>
     </ul>
-    <div *ngIf="selected_XHisAuftrag"> {{selected_XHisAuftrag.id}} </div>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="XHisAuftrag" role="tabpanel" aria-labelledby="XHisAuftrag-tab">XHisAuftrag... 
+        <div *ngIf="XHisAuftrag_selected"> {{XHisAuftrag_selected.SO_ID}} </div>
+       <ul class="list-group">
+          <li *ngFor="let a of XHisAuftrag_list" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="a === XHisAuftrag_selected"
+            (click)="onSelectXHisAuftrag(a)">
+            <a routerLink="/auftrag/{{a.id}}">
+              <span class="badge badge-primary badge-pill">{{a.id}}</span> Ext:{{a.EO_ID}}
+            </a>
+            <a routerLink="/auftrag/{{a.id}}">
+              <span class="badge badge-primary badge-pill">{{a.id}}</span> Int:{{a.SO_ID}}
+            </a>
+          </li>
+        </ul>
+     
+      </div>
+      <div class="tab-pane fade" id="XAuftrag" role="tabpanel" aria-labelledby="XAuftrag-tab">XAuftrag...{{inp}}
+        <div *ngIf="XAuftrag_selected"> {{XAuftrag_selected.SO_ID}} </div>
+        <ul class="list-group">
+          <li *ngFor="let a of XAuftrag_list" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="a === XAuftrag_selected"
+            (click)="onSelectXAuftrag(a)">
+            <a routerLink="/auftrag/{{a.id}}">
+              <span class="badge badge-primary badge-pill">{{a.id}}</span> Ext:{{a.EO_ID}}
+            </a>
+            <a routerLink="/auftrag/{{a.id}}">
+              <span class="badge badge-primary badge-pill">{{a.id}}</span> Int:{{a.SO_ID}}
+            </a>
+          </li>
+        </ul>
+ 
+      </div>
+      <div class="tab-pane fade" id="XAuftragExt" role="tabpanel" aria-labelledby="XAuftragExt-tab">XAuftragExt...
+        <div *ngIf="XAuftragExt_selected"> {{XAuftragExt_selected.EO_ID}} </div>
+       <ul class="list-group">
+          <li *ngFor="let a of XAuftragExt_list" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="a === XAuftragExt_selected"
+            (click)="onSelectXAuftragExt(a)">
+            <a routerLink="/auftrag/{{a.id}}">
+              <span class="badge badge-primary badge-pill">{{a.id}}</span> Ext:{{a.EO_ID}}
+            </a>
+            <a routerLink="/auftrag/{{a.id}}">
+              <span class="badge badge-primary badge-pill">{{a.id}}</span> Int:{{a.SO_ID}}
+            </a>
+          </li>
+        </ul>
+       </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <app-xauftrag-his-detail [xHisAuftrag]="XHisAuftrag_selected"></app-xauftrag-his-detail>
+    <app-xauftrag-detail [xAuftrag]="XAuftrag_selected"></app-xauftrag-detail>
+    <app-xauftrag-ext-detail [xAuftragExt]="XAuftragExt_selected"></app-xauftrag-ext-detail>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    ...
   </div>
   <!--
   -->
-  <div class="col-6">
-    <app-xauftrag-his-detail [xHisAuftrag]="selected_XHisAuftrag"></app-xauftrag-his-detail>
-  </div>
-
-</div>
-
-<div class="row">
-  <div class="col-6">
-    <h2>XAuftrag</h2>
-    <ul class="list-group">
-      <li *ngFor="let a of XAuftrag_list" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="a === selected_XAuftrag"
-        (click)="onSelect(a)">
-        <a routerLink="/auftrag/{{a.id}}/ext">
-          <span class="badge badge-primary badge-pill">{{a.id}}</span> Ext:{{a.EO_ID}}
-        </a>
-        <a routerLink="/auftrag/{{a.id}}/int">
-          <span class="badge badge-primary badge-pill">{{a.id}}</span> Int:{{a.SO_ID}}
-        </a>
-      </li>
-    </ul>
-    <div *ngIf="selected_XAuftrag"> {{selected_XAuftrag.id}} </div>
-  </div>
-  <!--
-    -->
-  <div class="col-6">
-    <app-xauftrag-detail [xAuftrag]="selected_XAuftrag"></app-xauftrag-detail>
-  </div>
+ 
 
 </div>

@@ -30,7 +30,9 @@ export class XAuftragComponent implements OnInit {
   ngOnInit() {
     this.inp = '100049016071215420200001';
     console.log("XbestandComponent:  ngOnInit()")
-
+    this.getXHisAuftragList();
+    this.getXAuftragList();
+    this.getXAuftragExtList();
   }
   onSelectXHisAuftrag(x_his_auftrag: XHisAuftrag): void {
     this.XHisAuftrag_selected = x_his_auftrag;
