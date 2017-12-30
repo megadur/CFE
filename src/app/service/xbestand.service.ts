@@ -13,8 +13,10 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+
 @Injectable()
-export class AccountService {
+export class XbestandService {
+
 
   //  private sUrl = 'api/heroes';  // URL to web api
   private sUrl = 'http://localhost:3300/account';  // URL to web api
@@ -60,4 +62,5 @@ export class AccountService {
   private log(message: string) {
     this.messageService.add('AccountService: ' + message);
   }
+
 }

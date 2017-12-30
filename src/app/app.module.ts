@@ -23,6 +23,7 @@ import { KonfigurationComponent } from './comp/konfiguration/konfiguration.compo
 import { KampagneComponent } from './comp/kampagne/kampagne.component';
 import { NutzermgmtComponent } from './comp/nutzermgmt/nutzermgmt.component';
 import { LoginComponent } from './comp/login/login.component';
+import { XbestandComponent } from './xbestand/xbestand.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { LoginComponent } from './comp/login/login.component';
     KonfigurationComponent,
     KampagneComponent,
     NutzermgmtComponent,
-    LoginComponent
+    LoginComponent,
+    XbestandComponent
   ],
   imports: [
     BrowserModule,

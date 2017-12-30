@@ -1,4 +1,4 @@
-import { OnInit, Component, Input, SimpleChanges, NgZone } from '@angular/core'
+import { OnInit, Component, Input, SimpleChanges } from '@angular/core'
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -12,10 +12,9 @@ import { AccountService } from '../../service/account.service';
 })
 export class AccountDetailComponent implements OnInit {
   @Input() account: Account;
-  acc: Observable<Account>;
-  inp: string;
+   inp: string;
   counter = 0;
-  constructor(private accountService: AccountService, private zone: NgZone) { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit() {
     this.getEmList();
@@ -26,34 +25,52 @@ export class AccountDetailComponent implements OnInit {
     if (this.account)
       this.accountService.getEmList(this.account.GUID)
         .subscribe(ems => this.account.emlist = ems);
+  }; 
+  getParList(): void {
+    //console.log("AccountDetailComponent: getEmList()")
+    if (this.account)
+      this.accountService.getParList(this.account.GUID)
+        .subscribe(x => this.account.parlist = x);
+  };
+     getSprList(): void {
+    //console.log("AccountDetailComponent: getEmList()")
+    if (this.account)
+      this.accountService.getSprList(this.account.GUID)
+        .subscribe(x => this.account.sprlist = x);
+  };
+     getRnrList(): void {
+    //console.log("AccountDetailComponent: getEmList()")
+    if (this.account)
+      this.accountService.getRnrList(this.account.GUID)
+        .subscribe(x => this.account.rnrlist = x);
+  };
+  getInsList(): void {
+    //console.log("AccountDetailComponent: getEmList()")
+    if (this.account)
+      this.accountService.getInsList(this.account.GUID)
+        .subscribe(x => this.account.inslist = x);
   }
 
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes.account.currentValue);// current selected value
     console.log(changes.account.previousValue);// previous selected value
     this.getEmList();
+    this.getParList();
+    this.getRnrList();
+    this.getSprList();
+    this.getInsList();
+    
   }
   getAccount(): void {
-    console.log("ADC: getAccount() in " + this.inp); 
+    console.log("ADC: getAccount() in " + this.inp);
     if (this.inp)
       this.accountService
-      .getAccount(this.inp)
-      .subscribe((a) => {
-        console.log("ADC: getAccount() state a " + a.GUID);
-        this.account=a[0];
-        console.log("ADC: getAccount() state " + this.account.GUID);
-        this.counter++; // application state changed
-      })
-      //      .subscribe(a => this.account = a);
-    console.log("ADC: getAccount() out " + this.account.GUID);
-  }
-  redraw(): void {
-    this.zone.run(() => this.account);
-    this.zone.run(() => {
-      console.log('enabled time travel '+ this.account.GUID);
-    });
-
-  }
-  
+        .getAccount(this.inp)
+        .subscribe((a) => {
+          this.account = a[0];
+          this.counter++; // application state changed
+        })
+    //      .subscribe(a => this.account = a);
+   }
 
 }

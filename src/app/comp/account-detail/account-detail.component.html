@@ -1,95 +1,123 @@
-<p>
-  account-detail works!{{ counter }}
-</p>
-<div *ngIf="account">
-  <h2>{{ account.GUID | uppercase }} Details</h2>
-  <div>
-    <span>TONR: </span>{{account.TONR}}</div>
-
-  <div class="form-group">
-    <label for="guid">GUID:</label>
-    <input type="text" class="form-control" id="guid" [(ngModel)]="inp" placeholder="a GUID">
-    <button type="button" class="btn btn-default" (click)="getAccount()">getAccount</button>
-  </div>
-  100049016041212390100001
-  <button type="button" class="btn btn-default" (click)="redraw()">redraw</button>
-  <!-- GUID, TO-Nr, KdNr, Status -->
-  <div class="col-md-5">
-    <dl class="dl-horizontal dl-horizontal-left">
-      <dt id="guid">GUID</dt>
-      <dd role="defintion" aria-labelledBy="guid">{{account.GUID}}</dd>
-      <dt id="tonr">TO-Nummer</dt>
-      <dd role="definition" aria-labelledBy="tonr">{{account.TO_NR}}</dd>
-      <dt id="kdnr">Kundennummer</dt>
-      <dd role="definition" aria-labelledBy="kdnr">{{account.KDNR}}</dd>
-      <dd role="definition" aria-labelledBy="kdnr">
-        <small>Neu: --</small>
-      </dd>
-      <dd role="definition" aria-labelledBy="kdnr">
-        <small>Alt: --</small>
-      </dd>
-      <dt id="status">Status</dt>
-      <dd role="definition" aria-labelledBy="status">aktiviert</dd>
-    </dl>
-  </div>
+<div class="row">
   <div class="col">
-    <h2>Bestand</h2>
-    <ul id="atabs" class="nav nav-tabs" data-tabs="atabs">
-      <li class="nav-item active">
-        <a class="nav-link" href="#red1" data-toggle="tab">Red</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#orange1" data-toggle="tab">Orange</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#yellow1" data-toggle="tab">Yellow</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#green1" data-toggle="tab">Green</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#blue1" data-toggle="tab">Blue</a>
-      </li>
-    </ul>
-    <div id="my-tab-content" class="tab-content">
-      <div class="tab-pane active" id="red1">
-        <h1>Red</h1>
-        <p>red red red red red red</p>
+    <h1>Account</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="guid" style="width: 220px;">GUID:</label>
+        <input type="text" class="form-control" id="guid" [(ngModel)]="inp" [ngModelOptions]="{standalone: true}" placeholder="GUID, KDNR, TO-NR"
+          style="width: 420px;">
+        <button type="button" class="btn btn-default" (click)="getAccount()">getAccount</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div *ngIf="account">
 
-        <ul class="list-group">
-          <li *ngFor="let e of account.emlist" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="e === emselected"
-            (click)="onSelect(e)">
-            <a routerLink="/account/{{e.STOCK_ID}}">
-              <span class="badge badge-primary badge-pill">{{e.STOCK_ID}}</span> {{e.EM_MATNO}}
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="tab-pane" id="orange1">
-        <h1>Orange</h1>
-        <p>orange orange orange orange orange</p>
-      </div>
-      <div class="tab-pane" id="yellow1">
-        <h1>Yellow</h1>
-        <p>yellow yellow yellow yellow yellow</p>
-      </div>
-      <div class="tab-pane" id="green1">
-        <h1>Green</h1>
-        <p>green green green green green</p>
-      </div>
-      <div class="tab-pane" id="blue1">
-        <h1>Blue</h1>
-        <p>blue blue blue blue blue</p>
+
+  <div class="row" style="background-color:beige;">
+    <!-- GUID, TO-Nr, KdNr, Status -->
+    <div class="col">
+
+      <dl class="grid">
+        <dt id="guid">GUID</dt>
+        <dd role="defintion" aria-labelledBy="guid">{{account.GUID}}</dd>
+
+        <dt id="tonr">TO-Nummer</dt>
+        <dd role="definition" aria-labelledBy="tonr">{{account.TO_NR}}</dd>
+
+        <dt id="kdnr">Kundennummer</dt>
+        <dd role="definition" aria-labelledBy="kdnr">{{account.KDNR}}</dd>
+
+        <dt id="kdnra">Neu: --</dt>
+        <dd role="definition" aria-labelledBy="kdnra">...</dd>
+        <dt id="kdnrn">Alt: -- </dt>
+        <dd role="definition" aria-labelledBy="kdnrn">...</dd>
+
+        <dt id="status">Status</dt>
+        <dd role="definition" aria-labelledBy="status">aktiviert</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Bestand -->
+    <div class="col">
+      <h2>aktiver Bestand</h2>
+      <ul id="atabs" class="nav nav-tabs" data-tabs="atabs">
+        <li class="nav-item active">
+          <a class="nav-link" href="#em" data-toggle="tab">EM</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#rnr" data-toggle="tab">RNR</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#spr" data-toggle="tab">SPR</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#par" data-toggle="tab">PAR</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#ins" data-toggle="tab">INS</a>
+        </li>
+      </ul>
+
+      <div id="my-tab-content" class="tab-content">
+        <div class="tab-pane active" id="em">
+          <ul class="list-group">
+            <li *ngFor="let e of account.emlist" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="e === emselected"
+              (click)="onSelect(e)">
+              <a routerLink="/account/{{e.STOCK_ID}}">
+                <span class="badge badge-primary badge-pill">{{e.STOCK_ID}}</span> {{e.EM_MATNO}}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-pane" id="par">
+          <ul class="list-group">
+            <li *ngFor="let p of account.parlist" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="p === account.parselected"
+              (click)="onSelect(p)">
+              <a routerLink="/account/{{p.STOCK_ID}}">
+                <span class="badge badge-primary badge-pill">{{p.STOCK_ID}}</span> {{p.EM_MATNO}} , {{p.PARAM_ID}}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-pane" id="rnr">
+          <ul class="list-group">
+            <li *ngFor="let r of account.rnrlist" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="r === account.rnrselected"
+              (click)="onSelect(r)">
+              <a routerLink="/account/{{r.STOCK_ID}}">
+                <span class="badge badge-primary badge-pill">{{r.STOCK_ID}}</span> {{r.INID}} , {{r.RN_STRUCT}}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-pane" id="spr">
+          <ul class="list-group">
+            <li *ngFor="let s of account.sprlist" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="s === account.sprselected"
+              (click)="onSelect(s)">
+              <a routerLink="/account/{{s.STOCK_ID}}">
+                <span class="badge badge-primary badge-pill">{{s.STOCK_ID}}</span> {{s.EM_MATNO}}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-pane" id="ins">
+          <ul class="list-group">
+            <li *ngFor="let i of account.inslist" class="list-group-item d-flex justify-content-between align-items-center" [class.selected]="i === account.insselected"
+              (click)="onSelect(i)">
+              <a routerLink="/account/{{i.STOCK_ID}}">
+                <span class="badge badge-primary badge-pill">{{i.STOCK_ID}}</span> {{i.EM_MATNO}} , {{i.INID}}
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-
-    <div *ngIf="account">Selected Acc {{account.GUID}}
-      <div *ngIf="account.ems">Selected EM {{account.ems}}
-      </div>
-    </div>
-    <button type="button" class="btn btn-default" (click)="getEmList()">getEmList</button>
-
-
 
   </div>
 </div>

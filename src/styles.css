@@ -8,7 +8,7 @@ body {
   padding: 3rem 1.5rem;
   text-align: center;
 }
-
+/*
 .dl-horizontal-gap-lg dt {
   width: 180px !important;
 }
@@ -34,3 +34,9 @@ dd
     text-align: left;
     width: 150px;
 }
+*/
+dl.grid {
+  display: flex; flex-wrap: wrap;
+}
+.grid dt {width: 220px; }
+.grid dd { width: calc(100% - 246px);}
