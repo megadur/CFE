@@ -31,11 +31,13 @@ import { MessageService } from './service/message.service';
 
 //PRM
 import { ProduktComponent } from './comp/prm/produkt/produkt.component';
+import { ProduktDetailComponent } from './comp/prm/produkt-detail/produkt-detail.component';
 import { XBestandComponent } from './comp/prm/xbestand/xbestand.component';
 import { XAuftragComponent } from './comp/prm/xauftrag/xauftrag.component';
 import { XauftragDetailComponent } from './comp/prm/xauftrag-detail/xauftrag-detail.component';
 import { XauftragExtDetailComponent } from './comp/prm/xauftrag-ext-detail/xauftrag-ext-detail.component';
 import { XauftragHisDetailComponent } from './comp/prm/xauftrag-his-detail/xauftrag-his-detail.component';
+import { XErrorComponent } from './comp/prm/xerror/xerror.component';
 import { XerrorDetailComponent } from './comp/prm/xerror-detail/xerror-detail.component';
 import { XmessageDetailComponent } from './comp/prm/xmessage-detail/xmessage-detail.component';
 
@@ -44,6 +46,7 @@ import { SnEinzelComponent } from './comp/wrt/sn-einzel/sn-einzel.component';
 import { SnListeComponent } from './comp/wrt/sn-liste/sn-liste.component';
 import { KampagneComponent } from './comp/wrt/kampagne/kampagne.component';
 import { NutzermgmtComponent } from './comp/wrt/nutzermgmt/nutzermgmt.component';
+import { AuftragComponent } from './comp/prm/auftrag/auftrag.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +73,10 @@ import { NutzermgmtComponent } from './comp/wrt/nutzermgmt/nutzermgmt.component'
     XauftragHisDetailComponent,
     XerrorDetailComponent,
     XmessageDetailComponent,
-    KatalogComponent
+    KatalogComponent,
+    ProduktDetailComponent,
+    XErrorComponent,
+    AuftragComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,43 @@
         <label for="guid" style="width: 220px;">GUID:</label>
         <input type="text" class="form-control" id="guid" [(ngModel)]="inp" [ngModelOptions]="{standalone: true}" placeholder="GUID, KDNR, TO-NR"
           style="width: 420px;">
+          <button type="button" class="btn btn-default" (click)="getAccount()">GUID</button>
+        </div>
+      <div class="form-group">
+        <label for="Auftrag" style="width: 220px;">GUID:</label>
+        <input type="text" class="form-control" id="Auftrag" [(ngModel)]="inp" [ngModelOptions]="{standalone: true}" placeholder="Auftrags ID"
+          style="width: 420px;">
+        <!-- Single button -->
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Action
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">IDM-Adapter</a>
+            </li>
+            <li>
+              <a href="#">SMK-FF</a>
+            </li>
+            <li>
+              <a href="#">CRM-T</a>
+            </li>
+            <li>
+              <a href="#">ALM-V</a>
+            </li>
+            <li>
+              <a href="#">DKK</a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+              <a href="#">SN-Ref</a>
+            </li>
+            <li>
+              <a href="#">Sonst.</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </form>
   </div>

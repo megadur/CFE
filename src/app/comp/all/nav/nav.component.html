@@ -6,25 +6,13 @@
         <a class="nav-link" routerLink="/account">Account</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/xauftrag">Auftrag</a>
+        <a class="nav-link" routerLink="/auftrag">Auftrag</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/sneinzel">SN Einzel</a>
+        <a class="nav-link" routerLink="/xerror">Fehler</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/snliste">SN Liste</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-          Admin
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/auswertung">Auswertung</a>
-          <a class="dropdown-item" routerLink="/konfiguration">Konfig</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+        <a class="nav-link" routerLink="/produkt">Produkte</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -32,8 +20,24 @@
           Wartung
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/sneinzel">SN Einzel</a>
+          <a class="dropdown-item" routerLink="/snliste">SN Liste</a>
+
           <a class="dropdown-item" routerLink="/kampagne">Kampagne</a>
           <a class="dropdown-item" routerLink="/nutzermgmt">Nutzermgmt</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Admin
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/katalog">Katalog</a>
+            <a class="dropdown-item" routerLink="/auswertung">Auswertung</a>
+            <a class="dropdown-item" routerLink="/konfiguration">Konfig</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>

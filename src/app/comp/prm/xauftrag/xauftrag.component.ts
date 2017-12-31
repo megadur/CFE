@@ -23,7 +23,7 @@ export class XAuftragComponent implements OnInit {
 
   xHisAuftrag_list: XHisAuftrag[];
   xHisAuftrag_selected: XHisAuftrag;
-  
+
   xAuftrag_list: XAuftrag[];
   xAuftrag_selected: XAuftrag;
 
@@ -50,6 +50,8 @@ export class XAuftragComponent implements OnInit {
 
   // XHisAuftrag
   onSelectXHisAuftrag(x_his_auftrag: XHisAuftrag): void {
+    this.unselectAll();
+
     this.xHisAuftrag_selected = x_his_auftrag;
   }
   getXHisAuftragList(): void {
@@ -67,6 +69,8 @@ export class XAuftragComponent implements OnInit {
   // XAuftrag
   onSelectXAuftrag(x_auftrag: XAuftrag): void {
     console.log("onSelectXAuftrag()");
+    this.unselectAll();
+
     this.xAuftrag_selected = x_auftrag;
   }
   getXAuftragList(): void {
@@ -84,7 +88,9 @@ export class XAuftragComponent implements OnInit {
   // XAuftragExt
   onSelectXAuftragExt(x_auftragExt: XAuftragExt): void {
     console.log("onSelectXAuftragExt()");
-     this.xAuftragExt_selected = x_auftragExt;
+    this.unselectAll();
+
+    this.xAuftragExt_selected = x_auftragExt;
   }
   getXAuftragExtList(): void {
     console.log("getXAuftragExtList()")
@@ -101,7 +107,9 @@ export class XAuftragComponent implements OnInit {
   // XError
   onSelectXError(xError: XError): void {
     console.log("onSelectXAuftragExt()");
-     this.xError_selected = xError;
+    this.unselectAll();
+
+    this.xError_selected = xError;
   }
   getXErrorList(): void {
     console.log("getXErrorList()")
@@ -117,7 +125,8 @@ export class XAuftragComponent implements OnInit {
   // XMessage
   onSelectXMessage(xMessage: XMessage): void {
     console.log("onSelectXMessage()");
-     this.xMessage_selected = xMessage;
+    this.unselectAll();
+    this.xMessage_selected = xMessage;
   }
   getXMessageList(): void {
     console.log("getXMessageList()")
@@ -129,5 +138,12 @@ export class XAuftragComponent implements OnInit {
 
     this.xAService.getXMessageList(guid)
       .subscribe(x => this.xMessage_list = x);
+  }
+  unselectAll(): void {
+    this.xHisAuftrag_selected = null;
+    this.xAuftrag_selected = null;
+    this.xAuftragExt_selected = null;
+    this.xError_selected = null;
+    this.xMessage_selected = null;
   }
 }

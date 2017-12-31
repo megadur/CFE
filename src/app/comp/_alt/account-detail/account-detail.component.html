@@ -7,10 +7,15 @@
   <div class="col">
     <form class="form-inline">
       <div class="form-group">
-        <label for="guid" style="width: 220px;">GUID:</label>
+        <label for="guid" style="width: 220px;">GUID, KDNR, TO-NR:</label>
         <input type="text" class="form-control" id="guid" [(ngModel)]="inp" [ngModelOptions]="{standalone: true}" placeholder="GUID, KDNR, TO-NR"
           style="width: 420px;">
-        <button type="button" class="btn btn-default" (click)="getAccount()">getAccount</button>
+          <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" (click)="getAccount()">All</button>
+            <button type="button" class="btn btn-default" (click)="getAccount()">GUID</button>
+            <button type="button" class="btn btn-default" (click)="getAccount()">KDNR</button>
+            <button type="button" class="btn btn-default" (click)="getAccount()">TONR</button>
+          </div>
       </div>
     </form>
   </div>
