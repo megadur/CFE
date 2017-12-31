@@ -1,6 +1,43 @@
-<div *ngIf="xExtAuftrag">
+<div class="row" style="background-color:rgb(224, 245, 220);">
+  <!-- GUID, TO-Nr, KdNr, Status -->
+  <div class="col">
     <p>
       xauftrag-ext-detail works!
     </p>
-    {{xExtAuftrag.SO_ID}}
   </div>
+</div>
+
+<div *ngIf="xAuftragExt">
+  <div class="row" style="background-color:rgb(224, 245, 220);">
+    <!-- GUID, TO-Nr, KdNr, Status -->
+    <div class="col">
+
+      <dl class="grid">
+        <dt id="EO_ID">EO_ID</dt>
+        <dd role="defintion" aria-labelledBy="EO_ID">{{xAuftragExt.EO_ID}}</dd>
+
+        <dt id="ORDER_ID_CRM">ORDER_ID_CRM</dt>
+        <dd role="definition" aria-labelledBy="ORDER_ID_CRM">{{xAuftragExt.ORDER_ID_CRM}}</dd>
+
+        <dt id="ORDER_ID_BSSOE">ORDER_ID_BSSOE</dt>
+        <dd role="definition" aria-labelledBy="ORDER_ID_BSSOE">{{xAuftragExt.ORDER_ID_BSSOE}}</dd>
+
+        <dt id="ORDER_ID_SMF">ORDER_ID_SMF</dt>
+        <dd role="definition" aria-labelledBy="ORDER_ID_SMF">{{xAuftragExt.ORDER_ID_SMF}}</dd>
+
+        <dt id="ORDER_ID_DKK">ORDER_ID_DKK</dt>
+        <dd role="definition" aria-labelledBy="ORDER_ID_DKK">{{xAuftragExt.ORDER_ID_DKK}}</dd>
+
+        <dt id="ORDER_ID_SNR">ORDER_ID_SNR</dt>
+        <dd role="definition" aria-labelledBy="ORDER_ID_SNR">{{xAuftragExt.ORDER_ID_SNR}}</dd>
+
+        <dt id="ORDER_ID_MISC">ORDER_ID_MISC</dt>
+        <dd role="definition" aria-labelledBy="ORDER_ID_MISC">{{xAuftragExt.ORDER_ID_MISC}}</dd>
+
+        <dt id="URSPRUNGS_KWT">URSPRUNGS_KWT</dt>
+        <dd role="definition" aria-labelledBy="URSPRUNGS_KWT">{{xAuftragExt.URSPRUNGS_KWT}}</dd>
+
+      </dl>
+    </div>
+  </div>
+</div>

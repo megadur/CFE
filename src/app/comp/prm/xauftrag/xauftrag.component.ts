@@ -7,6 +7,9 @@ import { Account } from '../../../model/account';
 import { XHisAuftrag } from '../../../model/x_his_auftrag';
 import { XAuftrag } from '../../../model/x_auftrag';
 import { XAuftragExt } from '../../../model/x_auftrag_ext';
+import { XError } from '../../../model/x_error';
+import { XMessage } from '../../../model/x_message';
+
 import { XAuftragService } from '../../../service/xauftrag.service';
 
 @Component({
@@ -18,12 +21,20 @@ export class XAuftragComponent implements OnInit {
   @Input() account: Account;
   inp: string;
 
-  XHisAuftrag_list: XHisAuftrag[];
-  XHisAuftrag_selected: XHisAuftrag;
-  XAuftrag_list: XAuftrag[];
-  XAuftrag_selected: XAuftrag;
-  XAuftragExt_list: XAuftragExt[];
-  XAuftragExt_selected: XAuftragExt;
+  xHisAuftrag_list: XHisAuftrag[];
+  xHisAuftrag_selected: XHisAuftrag;
+  
+  xAuftrag_list: XAuftrag[];
+  xAuftrag_selected: XAuftrag;
+
+  xAuftragExt_list: XAuftragExt[];
+  xAuftragExt_selected: XAuftragExt;
+
+  xError_list: XError[];
+  xError_selected: XError;
+
+  xMessage_list: XMessage[];
+  xMessage_selected: XMessage;
 
   constructor(private xAService: XAuftragService) { }
 
@@ -33,9 +44,13 @@ export class XAuftragComponent implements OnInit {
     this.getXHisAuftragList();
     this.getXAuftragList();
     this.getXAuftragExtList();
+    this.getXMessageList();
+    this.getXErrorList();
   }
+
+  // XHisAuftrag
   onSelectXHisAuftrag(x_his_auftrag: XHisAuftrag): void {
-    this.XHisAuftrag_selected = x_his_auftrag;
+    this.xHisAuftrag_selected = x_his_auftrag;
   }
   getXHisAuftragList(): void {
     console.log("getXHisAuftragList()")
@@ -46,11 +61,13 @@ export class XAuftragComponent implements OnInit {
       guid = this.inp;
 
     this.xAService.getXHisAuftragList(guid)
-      .subscribe(x => this.XHisAuftrag_list = x);
+      .subscribe(x => this.xHisAuftrag_list = x);
   }
-  //
+
+  // XAuftrag
   onSelectXAuftrag(x_auftrag: XAuftrag): void {
-    this.XAuftrag_selected = x_auftrag;
+    console.log("onSelectXAuftrag()");
+    this.xAuftrag_selected = x_auftrag;
   }
   getXAuftragList(): void {
     console.log("getXAuftragList()")
@@ -61,7 +78,13 @@ export class XAuftragComponent implements OnInit {
       guid = this.inp;
 
     this.xAService.getXAuftragList(guid)
-      .subscribe(x => this.XAuftrag_list = x);
+      .subscribe(x => this.xAuftrag_list = x);
+  }
+
+  // XAuftragExt
+  onSelectXAuftragExt(x_auftragExt: XAuftragExt): void {
+    console.log("onSelectXAuftragExt()");
+     this.xAuftragExt_selected = x_auftragExt;
   }
   getXAuftragExtList(): void {
     console.log("getXAuftragExtList()")
@@ -72,6 +95,39 @@ export class XAuftragComponent implements OnInit {
       guid = this.inp;
 
     this.xAService.getXAuftragExtList(guid)
-      .subscribe(x => this.XAuftragExt_list = x);
+      .subscribe(x => this.xAuftragExt_list = x);
+  }
+
+  // XError
+  onSelectXError(xError: XError): void {
+    console.log("onSelectXAuftragExt()");
+     this.xError_selected = xError;
+  }
+  getXErrorList(): void {
+    console.log("getXErrorList()")
+    var guid: string;
+    if (this.account)
+      guid = this.account.GUID;
+    if (this.inp)
+      guid = this.inp;
+
+    this.xAService.getXErrorList(guid)
+      .subscribe(x => this.xError_list = x);
+  }
+  // XMessage
+  onSelectXMessage(xMessage: XMessage): void {
+    console.log("onSelectXMessage()");
+     this.xMessage_selected = xMessage;
+  }
+  getXMessageList(): void {
+    console.log("getXMessageList()")
+    var guid: string;
+    if (this.account)
+      guid = this.account.GUID;
+    if (this.inp)
+      guid = this.inp;
+
+    this.xAService.getXMessageList(guid)
+      .subscribe(x => this.xMessage_list = x);
   }
 }

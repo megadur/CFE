@@ -9,6 +9,8 @@ import { XAccountInfo } from '../model/x_account_info';
 import { XHisAuftrag } from '../model/x_his_auftrag';
 import { XAuftrag } from '../model/x_auftrag';
 import { XAuftragExt } from '../model/x_auftrag_ext';
+import { XError } from '../model/x_error';
+import { XMessage } from '../model/x_message';
 
 import { MessageService } from './message.service';
 
@@ -40,8 +42,8 @@ export class XAuftragService {
       catchError(this.handleError<XAccountInfo[]>(`getXAccountInfo id=${guid}`))
       );
   }
-  //XHisAuftrag
-  /** GET Account by guid. Will 404 if id not found */
+
+  /** GET XHisAuftrag by guid. Will 404 if id not found */
   getXHisAuftragList(guid: string): Observable<XHisAuftrag[]> {
     this.log("getXHisAuftragList")
     const url = `${this.sUrl}/${guid}/XHisAuftrag`;
@@ -63,7 +65,6 @@ export class XAuftragService {
       );
   }
 
-  //
   /** GET XAuftragExt by guid. Will 404 if id not found */
   getXAuftragExtList(guid: string): Observable<XAuftragExt[]> {
     this.log("getXAuftragExtList")
@@ -74,6 +75,29 @@ export class XAuftragService {
       catchError(this.handleError<XAuftragExt[]>(`getXAuftragExt id=${guid}`))
       );
   }
+
+  /** GET XError by guid. Will 404 if id not found */
+  getXErrorList(guid: string): Observable<XError[]> {
+    this.log("getXErrorList")
+    const url = `${this.sUrl}/${guid}/XError`;
+    return this.http.get<XError[]>(url)
+      .pipe(
+      tap(_ => this.log(`fetched XErrors for ${guid}`)),
+      catchError(this.handleError<XError[]>(`getXError id=${guid}`))
+      );
+  }
+
+  /** GET XMessage by guid. Will 404 if id not found */
+  getXMessageList(guid: string): Observable<XMessage[]> {
+    this.log("getXMessageList")
+    const url = `${this.sUrl}/${guid}/XMessage`;
+    return this.http.get<XMessage[]>(url)
+      .pipe(
+      tap(_ => this.log(`fetched XMessages for ${guid}`)),
+      catchError(this.handleError<XMessage[]>(`getXMessageList id=${guid}`))
+      );
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.
