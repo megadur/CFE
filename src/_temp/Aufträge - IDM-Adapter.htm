@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Aufträge - IDM-Adapter</title>
+    <link rel="stylesheet" type="text/css" href="Auftr%C3%A4ge%20-%20IDM-Adapter-Dateien/default.css">
+          
+    <link rel="stylesheet" type="text/css" href="Auftr%C3%A4ge%20-%20IDM-Adapter-Dateien/bootstrap-select.css">
+	<link href="Auftr%C3%A4ge%20-%20IDM-Adapter-Dateien/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="Auftr%C3%A4ge%20-%20IDM-Adapter-Dateien/a11ytheme.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/idma-callcenter/webjars/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="/idma-callcenter/webjars/respond/1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    
+    <link rel="stylesheet" type="text/css" href="Auftr%C3%A4ge%20-%20IDM-Adapter-Dateien/select2.css">
+
+    <script type="text/javascript" src="Auftr%C3%A4ge%20-%20IDM-Adapter-Dateien/jquery.js">
+    <!-- -->
+    </script>
+    <script type="text/javascript" src="Auftr%C3%A4ge%20-%20IDM-Adapter-Dateien/bootstrap.js">
+    <!-- -->
+    </script>
+    <script type="text/javascript" src="Auftr%C3%A4ge%20-%20IDM-Adapter-Dateien/bootstrap-select.js">
+    <!-- -->
+    </script>
+    <script type="text/javascript" src="Auftr%C3%A4ge%20-%20IDM-Adapter-Dateien/application.js">
+            <!-- -->
+    </script>
+    <script type="text/javascript" src="Auftr%C3%A4ge%20-%20IDM-Adapter-Dateien/stockeditor.js">
+    <!-- -->
+    </script>
+    <script type="text/javascript" src="Auftr%C3%A4ge%20-%20IDM-Adapter-Dateien/select2.js">
+    <!-- -->
+    </script>
+    
+    <script type="text/javascript">
+      $(function() {
+        $('.selectpicker').selectpicker({
+        	tickIcon:'glyphicon-ok'
+        });
+      });
+    </script>
+  </head>
+
+<body>
+	<nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <a class="sr-only sr-only-focusable" href="#content">Zu Inhalt springen</a>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" title="IDM-Adapter Frontend">IDM-Adapter</a>
+        </div>
+        <ul class="nav navbar-nav" aria-labelledby="navigation-main">
+          <li>
+            <a href="http://10.171.116.61:8085/idma-callcenter/accounts" title="Nach Kunden suchen">Kunden</a></li>
+          <li class="active">
+            <a href="http://10.171.116.61:8085/idma-callcenter/orders" title="Nach Aufträgen suchen">Aufträge</a></li>
+          <li>
+            <a href="http://10.171.116.61:8085/idma-callcenter/errors" title="Nach Fehlern suchen">Fehler</a></li>
+          <li>
+            <a href="http://10.171.116.61:8085/idma-callcenter/catalog" title="Produktkatalog anzeigen">Produktkatalog</a></li>
+       	  
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="http://10.171.116.61:8085/idma-callcenter/logout" title="Sitzung beenden">Abmelden</a>
+          </li> 
+        </ul>
+      </div>
+    </nav>
+
+	<div class="container-fluid" role="main" aria-labelledby="order" id="content">
+
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="sr-only" id="order">Externe Aufträge </h1>
+			</div>
+		</div>
+
+		<!-- Suchfeld -->
+		<div class="row">
+			<div class="col-md-6">
+				<form method="get" action="/idma-callcenter/orders" role="search">
+      <div class="form-group">
+        <label for="search">IDM-Adapter intern</label>
+        <div class="input-group">
+          <input class="form-control" required="required" name="query" id="search" placeholder="Auftragsnummer eingeben" value="XDM000000134206" maxlength="100" autofocus="autofocus" type="text"> 
+          <label for="system" class="sr-only">order.search.system</label> 
+          <div class="btn-group bootstrap-select input-group-btn" style="width: 164px;"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" data-id="system" title="IDM-Adapter extern"><span class="filter-option pull-left">IDM-Adapter extern</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox" style="min-width: 0px;"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">IDM-Adapter intern</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">IDM-Adapter extern</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">SMK-FF</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">CRM-T</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">BSSOE</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="5"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">DKK</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="6"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Sofortnutzungsref.</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="7"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Sonstiges</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker" data-width="auto" id="system" name="type" tabindex="-98">
+            <option value="IDMA">IDM-Adapter intern</option>
+            <option selected="selected" value="EXT">IDM-Adapter extern</option>
+            <option value="SMF">SMK-FF</option>
+            <option value="CRM">CRM-T</option>
+            <option value="BSSOE">BSSOE</option>
+            <option value="DKK">DKK</option>
+            <option value="SNR">Sofortnutzungsref.</option>
+            <option value="MISC">Sonstiges</option>
+          </select></div>
+          <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary">Suchen</button>
+          </span>
+        </div>
+      </div>
+    </form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<dl class="dl-horizontal dl-horizontal-left">
+					<dt id="toNr">TO-Nummer</dt>
+					<dd role="defintion" aria-labelledby="toNr">607121542020</dd>
+
+					<dt id="idma">IDM-Adapter extern</dt>
+					<dd role="defintion" aria-labelledby="idma">XDM000000134206</dd>
+
+					<dt id="smf">SMK-FF</dt>
+					<dd role="defintion" aria-labelledby="smf">607121542-0000-0000-a0000-0000203</dd>
+
+					<dt id="crm">CRM-T</dt>
+					<dd role="defintion" aria-labelledby="crm">60712154200</dd>
+
+					<dt id="bssoe">BSSOE</dt>
+					<dd role="defintion" aria-labelledby="bssoe">607121542021</dd>
+
+
+
+				</dl>
+			</div>
+
+			<div class="col-md-4">
+				<dl class="dl-horizontal dl-horizontal-left">
+					<dt id="kdNr">Kundennummer</dt>
+					<dd role="defintion" aria-labelledby="kdNr">6071215420</dd>
+						
+					<dt id="dkk">DKK</dt>
+					<dd role="defintion" aria-labelledby="dkk"></dd>
+
+					<dt id="snr">Sofortnutzungsref.</dt>
+					<dd role="defintion" aria-labelledby="snr"></dd>
+
+					<dt id="misc">Sonstiges</dt>
+					<dd role="defintion" aria-labelledby="misc"></dd>
+
+				</dl>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-striped">
+					<caption class="sr-only">??order.search.caption_de??</caption>
+					<thead>
+						<tr>
+							<th id="id">IDM-Adapter intern</th>
+							<th id="type">Auftragstyp</th>
+							<th id="status">Status</th>
+							<th id="created">Erzeugt</th>
+							<th id="completed">Komplettiert</th>
+							<th id="aborted">Abgebrochen</th>
+							<th id="executed">Ausgeführt</th>
+							<th id="rollbacked">Zurückgerollt</th>
+							<th id="commited">Abgeschlossen</th>
+							<th id="lastUpdate">Letztes Update</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td headers="id"><a href="http://10.171.116.61:8085/idma-callcenter/orders/IDM000000639877">IDM000000639877</a></td>
+							<td headers="type">Auftrag mit Teilaktion ‚IDM Provisionierung beauftragen‘</td>
+							<td headers="status">Completed</td>
+							<td headers="created">7. Dezember 2017 15:57:07 MEZ</td>
+							<td headers="completed">7. Dezember 2017 15:57:07 MEZ</td>
+							<td headers="aborted">--</td>
+							<td headers="executed">--</td>
+							<td headers="rollbacked">--</td>
+							<td headers="commited">--</td>
+							<td headers="lastUpdate">7. Dezember 2017 15:57:07 MEZ</td>
+						</tr>
+						<tr>
+							<td headers="id"><a href="http://10.171.116.61:8085/idma-callcenter/orders/IDM000000639878">IDM000000639878</a></td>
+							<td headers="type">E.164 Nutzer Zuordnung lesen</td>
+							<td headers="status">Error in Completion</td>
+							<td headers="created">7. Dezember 2017 15:57:07 MEZ</td>
+							<td headers="completed">--</td>
+							<td headers="aborted">--</td>
+							<td headers="executed">--</td>
+							<td headers="rollbacked">--</td>
+							<td headers="commited">--</td>
+							<td headers="lastUpdate">7. Dezember 2017 15:57:07 MEZ</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+        <div class="col-md-12">
+          <h3>Protokoll</h3>
+          
+      <div class="panel-group" id="protocol-accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" href="#QueueProvider-64416">
+                <span>7. Dezember 2017 15:57:07 MEZ</span>
+                <span class="pull-right">
+                  
+                  
+                  
+                    <span aria-hidden="true" class="glyphicon glyphicon-arrow-left"><!--  --></span>
+                    <span aria-hidden="true" class="glyphicon glyphicon-envelope"><!--  --></span>
+                    <span class="sr-only">??protokoll.queue.outbound_de??</span>
+                  
+                  
+                </span>
+              </a>
+            </h4>
+          </div>
+          <div class="panel-collapse collapse" data-parent="#protocol-accordion" id="QueueProvider-64416">
+            <div class="panel-body">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a role="tab" data-toggle="tab" href="#QueueProvider-64416-request">Anfrage</a></li>
+                <li><a role="tab" data-toggle="tab" href="#QueueProvider-64416-response">Antwort</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="QueueProvider-64416-request">
+                  <div class="btn-group">
+                    <a class="pre-copy btn btn-default" role="button" data-clipboard-target="QueueProvider-64416-request-pre" href="#QueueProvider-64416-request-pre">
+                      <span class="glyphicon glyphicon-file" aria-hidden="true"><!--  --></span> 
+                      <span>Kopieren</span></a>
+                    <a class="pre-maximize btn btn-default" role="button" href="#QueueProvider-64416-request-pre">
+                      <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"><!--  --></span> 
+                      <span>Maximieren</span></a>
+                  </div>
+                  <pre class="pre-scrollable" id="QueueProvider-64416-request-pre">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soapenv:Body&gt;&lt;!--generiert von TDGenerator V01.01 TC ID: CR-283-02-02-1-CP_req TC Name: 1-CP_req Datenspec: completePP( ppid=PPID3, subTyp="DoublePlay", BII_subscription( specid="xPlay" ), BII_subscriber( ), BII_ISP_Content( refb="@CR-283-02-02-alc-order_isi.xml", usecase="BSY" ), E164( nr="1", hrn="true", msn=MSN ), E164( nr="2", msn=MSN1 ), E164( nr="3", msn=MSN2 ), VoIP( inid=INID ), NutzerLeg( ), Mediation( ), TA_IDMauftr( ), TA_NutzerLesen( ) )--&gt;&lt;ns0:completeProductionPlan xmlns:ns0="http://services.tdeu.telekom.net/ServAndResMgmt/TechOrderMgmt/ProductionFulfillmentProvider_v01.00"&gt;&lt;svctypes:context xmlns="http://system-services.t-home.telekom.de/ServiceManagement/OIS_Services_v01.00/common" xmlns:bomtypes="http://system-services.t-home.telekom.de/ServiceManagement/TechnicalOrderManagement/ProductionFulfillment_v01.01/types" xmlns:csdg="http://schemas.telekom.net/csdg_v01.01" xmlns:svctypes="http://services.tdeu.telekom.net/ServAndResMgmt/TechOrderMgmt/ProductionFulfillmentProvider_v01.00/types"&gt;&lt;csdg:technicalContext&gt;&lt;csdg:from&gt;de.telekom.ngssm.oss.fulfillment.SMK_FF:CCBAdapter&lt;/csdg:from&gt;&lt;csdg:routingInfo&gt;de.telekom.ngssm.oss.fulfillment.SMK_FF:CCBAdapter:ProductionFulfillmentProvider_IDM&lt;/csdg:routingInfo&gt;&lt;csdg:messageId&gt;607121542-0000-0000-a0000-0000203-cp&lt;/csdg:messageId&gt;&lt;csdg:currentSenderTimestampUTC&gt;2017-12-07T15:42:46.000Z&lt;/csdg:currentSenderTimestampUTC&gt;&lt;csdg:expiryOffsetInMillis&gt;200000000&lt;/csdg:expiryOffsetInMillis&gt;&lt;/csdg:technicalContext&gt;&lt;csdg:businessContext&gt;&lt;csdg:processId&gt;607121542-0000-0000-a0000-0000203-cp&lt;/csdg:processId&gt;&lt;csdg:processTypeId&gt;SMF Produktionsplan&lt;/csdg:processTypeId&gt;&lt;/csdg:businessContext&gt;&lt;/svctypes:context&gt;&lt;svctypes:data xmlns="http://system-services.t-home.telekom.de/ServiceManagement/OIS_Services_v01.00/common" xmlns:bomtypes="http://system-services.t-home.telekom.de/ServiceManagement/TechnicalOrderManagement/ProductionFulfillment_v01.01/types" xmlns:csdg="http://schemas.telekom.net/csdg_v01.01" xmlns:svctypes="http://services.tdeu.telekom.net/ServAndResMgmt/TechOrderMgmt/ProductionFulfillmentProvider_v01.00/types"&gt;&lt;ns1:completeProductionPlan xmlns:ns1="http://system-services.t-home.telekom.de/ServiceManagement/TechnicalOrderManagement/ProductionFulfillment_v01.01/types"&gt;&lt;!--leeres BSY--&gt;&lt;bomtypes:messageID&gt;&lt;value&gt;607121542-0000-0000-a0000-0000203-cp&lt;/value&gt;&lt;/bomtypes:messageID&gt;&lt;bomtypes:productionPlan&gt;&lt;entityKey&gt;&lt;keyA&gt;607121542-0000-0000-a0000-0000203&lt;/keyA&gt;&lt;/entityKey&gt;&lt;state&gt;&lt;value&gt;readyForCompletion&lt;/value&gt;&lt;/state&gt;&lt;specification&gt;&lt;specificationName&gt;ProductionPlanSpec&lt;/specificationName&gt;&lt;specificationID&gt;ProductionPlanSpec&lt;/specificationID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;DueDate&lt;/characteristicID&gt;&lt;characteristicValue&gt;2017-12-07T16:42:46+01:00&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;CRMAuftragsNummer&lt;/characteristicID&gt;&lt;characteristicValue&gt;60712154200&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;BSS_OE_OrderID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Status&lt;/characteristicID&gt;&lt;characteristicValue&gt;readyForCompletion&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;PreviousProductionPlan&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;aktiverArbeitsplatzList&lt;/characteristicID&gt;&lt;/characteristic&gt;&lt;/specification&gt;&lt;businessInteractionItem&gt;&lt;entityKey&gt;&lt;keyA&gt;keyA-SubscriptionServiceOrderItemSpec&lt;/keyA&gt;&lt;keyB&gt;keyB-SubscriptionServiceOrderItemSpec&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;SubscriptionServiceOrderItemSpec&lt;/specificationName&gt;&lt;specificationID&gt;SubscriptionServiceOrderItemSpec&lt;/specificationID&gt;&lt;/specification&gt;&lt;service&gt;&lt;entityKey&gt;&lt;keyA&gt;keyA-SUBSCRIPTION-6-2017-12-07T15-42-46&lt;/keyA&gt;&lt;keyB&gt;keyB-Subscription&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;Subscription&lt;/specificationName&gt;&lt;specificationID&gt;xPlay&lt;/specificationID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Subscription-ID&lt;/characteristicID&gt;&lt;characteristicValue&gt;539622000000000&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Vertrag&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;AnschlussVertragID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;ISPVertragID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;VoIPPlattform&lt;/characteristicID&gt;&lt;characteristicValue&gt;IMS&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Service_Level&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Subscription-Typ&lt;/characteristicID&gt;&lt;characteristicValue&gt;DoublePlay&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;TO-Nr&lt;/characteristicID&gt;&lt;characteristicValue&gt;607121542020&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;BKTO-Nr&lt;/characteristicID&gt;&lt;characteristicValue&gt;4962118000&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Subscriber-Referenz&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-SUBSCRIBER-6-2017-12-07T15-42-46&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyB&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyB-SubscriberServiceOrderItemSpec&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;CRM_Sperre&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Kundensperre&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Betreibersperre&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Dienstleistersperre&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;DKK_Sperre&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Voll_Sperre_VoIP&lt;/characteristicID&gt;&lt;characteristicValue&gt;false&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Voll_Sperre_ISP&lt;/characteristicID&gt;&lt;characteristicValue&gt;false&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;GassenSperre_VoIP&lt;/characteristicID&gt;&lt;characteristicValue&gt;false&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Erweiterte_SLA&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Bevorrechtigte_Entstoerung_PTSG&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/specification&gt;&lt;/service&gt;&lt;/businessInteractionItem&gt;&lt;businessInteractionItem&gt;&lt;entityKey&gt;&lt;keyA&gt;keyA-SubscriberServiceOrderItemSpec&lt;/keyA&gt;&lt;keyB&gt;keyB-SubscriberServiceOrderItemSpec&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;SubscriberServiceOrderItemSpec&lt;/specificationName&gt;&lt;specificationID&gt;SubscriberServiceOrderItemSpec&lt;/specificationID&gt;&lt;/specification&gt;&lt;service&gt;&lt;entityKey&gt;&lt;keyA&gt;keyA-SUBSCRIBER-6-2017-12-07T15-42-46&lt;/keyA&gt;&lt;keyB&gt;keyB-Subscriber&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;Subscriber&lt;/specificationName&gt;&lt;specificationID&gt;Subscriber&lt;/specificationID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Subscriber-ID&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-Subscriber&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Kundennummer&lt;/characteristicID&gt;&lt;characteristicValue&gt;6071215420&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/specification&gt;&lt;/service&gt;&lt;/businessInteractionItem&gt;&lt;businessInteractionItem&gt;&lt;entityKey&gt;&lt;keyA&gt;keyA-CONTENT-6-2017-12-07T15-42-46&lt;/keyA&gt;&lt;keyB&gt;keyB-ISP_Content_ServiceServiceOrderItemSpec&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;ISP_Content_ServiceServiceOrderItemSpec&lt;/specificationName&gt;&lt;specificationID&gt;ISP_Content_ServiceServiceOrderItemSpec&lt;/specificationID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;ISP&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;RefBRequest&lt;/characteristicID&gt;&lt;characteristicValue&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;order_isi xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&amp;gt;&amp;lt;kopfdaten&amp;gt;&amp;lt;sender&amp;gt;ALC&amp;lt;/sender&amp;gt;&amp;lt;receiver&amp;gt;THNF&amp;lt;/receiver&amp;gt;&amp;lt;order_no&amp;gt;607121542021&amp;lt;/order_no&amp;gt;&amp;lt;serial_no&amp;gt;000&amp;lt;/serial_no&amp;gt;&amp;lt;crm_auftragsnr&amp;gt;60712154200&amp;lt;/crm_auftragsnr&amp;gt;&amp;lt;timestamp&amp;gt;20171207154246&amp;lt;/timestamp&amp;gt;&amp;lt;/kopfdaten&amp;gt;&amp;lt;gfpos_isi&amp;gt;&amp;lt;gf&amp;gt;0100&amp;lt;/gf&amp;gt;&amp;lt;egf&amp;gt;001&amp;lt;/egf&amp;gt;&amp;lt;faz&amp;gt;0000&amp;lt;/faz&amp;gt;&amp;lt;asid&amp;gt;471101&amp;lt;/asid&amp;gt;&amp;lt;kundendaten&amp;gt;&amp;lt;to-nummer&amp;gt;607121542020&amp;lt;/to-nummer&amp;gt;&amp;lt;tcom-kundennr&amp;gt;6071215420&amp;lt;/tcom-kundennr&amp;gt;&amp;lt;bkto&amp;gt;4962118000&amp;lt;/bkto&amp;gt;&amp;lt;onkz&amp;gt;600&amp;lt;/onkz&amp;gt;&amp;lt;rufnummer&amp;gt;106100567&amp;lt;/rufnummer&amp;gt;&amp;lt;geburtsdatum&amp;gt;19111111&amp;lt;/geburtsdatum&amp;gt;&amp;lt;grus&amp;gt;004322796873&amp;lt;/grus&amp;gt;&amp;lt;wohnanschrift&amp;gt;&amp;lt;anrede&amp;gt;1&amp;lt;/anrede&amp;gt;&amp;lt;name&amp;gt;MANDELBROT&amp;lt;/name&amp;gt;&amp;lt;vorname&amp;gt;Max&amp;lt;/vorname&amp;gt;&amp;lt;plz&amp;gt;12345&amp;lt;/plz&amp;gt;&amp;lt;ort&amp;gt;Entenhausen&amp;lt;/ort&amp;gt;&amp;lt;strasse&amp;gt;Erpelweg&amp;lt;/strasse&amp;gt;&amp;lt;hausnummer&amp;gt;11&amp;lt;/hausnummer&amp;gt;&amp;lt;/wohnanschrift&amp;gt;&amp;lt;/kundendaten&amp;gt;&amp;lt;auftragsposNummer&amp;gt;607121542000001&amp;lt;/auftragsposNummer&amp;gt;&amp;lt;kwtdate&amp;gt;20171207&amp;lt;/kwtdate&amp;gt;&amp;lt;!--zMP Bestandssynchro/EM zum zMP Bestandssynchro--&amp;gt;&amp;lt;komponente_isi&amp;gt;&amp;lt;mp_mat_nr&amp;gt;000000000089762694&amp;lt;/mp_mat_nr&amp;gt;&amp;lt;em_mat_nr&amp;gt;000000000088219578&amp;lt;/em_mat_nr&amp;gt;&amp;lt;LSI-Container&amp;gt;&amp;lt;LSI-Wert&amp;gt;607121542020&amp;lt;/LSI-Wert&amp;gt;&amp;lt;Attribut-ID&amp;gt;0000000564&amp;lt;/Attribut-ID&amp;gt;&amp;lt;/LSI-Container&amp;gt;&amp;lt;/komponente_isi&amp;gt;&amp;lt;/gfpos_isi&amp;gt;&amp;lt;/order_isi&amp;gt;&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Anschrift&lt;/characteristicID&gt;&lt;characteristicValue&gt;&amp;lt;PersistenteAnschrift&amp;gt;&amp;lt;Anrede&amp;gt;1&amp;lt;/Anrede&amp;gt;&amp;lt;Vorname&amp;gt;Max&amp;lt;/Vorname&amp;gt;&amp;lt;Name&amp;gt;SCHMIDT&amp;lt;/Name&amp;gt;&amp;lt;Strasse&amp;gt;Erpelweg&amp;lt;/Strasse&amp;gt;&amp;lt;Hausnummer&amp;gt;11&amp;lt;/Hausnummer&amp;gt;&amp;lt;LKZ&amp;gt;DE&amp;lt;/LKZ&amp;gt;&amp;lt;PLZ&amp;gt;12345&amp;lt;/PLZ&amp;gt;&amp;lt;Ort&amp;gt;Entenhausen&amp;lt;/Ort&amp;gt;&amp;lt;/PersistenteAnschrift&amp;gt;&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;CRMInfo&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;UseCase&lt;/characteristicID&gt;&lt;characteristicValue&gt;BSY&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;SeamlessCallNumberTransfer&lt;/characteristicID&gt;&lt;characteristicValue&gt;false&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/specification&gt;&lt;service&gt;&lt;entityKey&gt;&lt;keyB&gt;keyB-ISP_Content_Service&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;ISP_Content_Service&lt;/specificationName&gt;&lt;specificationID&gt;ISP_Content_Service&lt;/specificationID&gt;&lt;/specification&gt;&lt;/service&gt;&lt;/businessInteractionItem&gt;&lt;businessInteractionItem&gt;&lt;entityKey&gt;&lt;keyA&gt;keyA-E164-6-2017-12-07T15-42-46&lt;/keyA&gt;&lt;keyB/&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;E.164ServiceOrderItemSpec&lt;/specificationName&gt;&lt;specificationID&gt;E.164ServiceOrderItemSpec&lt;/specificationID&gt;&lt;/specification&gt;&lt;service&gt;&lt;entityKey&gt;&lt;keyA/&gt;&lt;keyB&gt;keyB_E.164Svc_1&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;E.164&lt;/specificationName&gt;&lt;specificationID&gt;E.164&lt;/specificationID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Rufnummer&lt;/characteristicID&gt;&lt;characteristicValue&gt;600 106100567&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;istMSN0&lt;/characteristicID&gt;&lt;characteristicValue&gt;true&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Umzugsansage&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Nutzer&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-NUTZER-6-2017-12-07T15-42-46&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyB&lt;/characteristicID&gt;&lt;characteristicValue&gt;XXX-Nutzer&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/specification&gt;&lt;/service&gt;&lt;/businessInteractionItem&gt;&lt;businessInteractionItem&gt;&lt;entityKey&gt;&lt;keyA&gt;keyA-E164-6-2017-12-07T15-42-46&lt;/keyA&gt;&lt;keyB/&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;E.164ServiceOrderItemSpec&lt;/specificationName&gt;&lt;specificationID&gt;E.164ServiceOrderItemSpec&lt;/specificationID&gt;&lt;/specification&gt;&lt;service&gt;&lt;entityKey&gt;&lt;keyA/&gt;&lt;keyB&gt;keyB_E.164Svc_2&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;E.164&lt;/specificationName&gt;&lt;specificationID&gt;E.164&lt;/specificationID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Rufnummer&lt;/characteristicID&gt;&lt;characteristicValue&gt;600 106100568&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;istMSN0&lt;/characteristicID&gt;&lt;characteristicValue&gt;false&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Umzugsansage&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Nutzer&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-NUTZER-6-2017-12-07T15-42-46&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyB&lt;/characteristicID&gt;&lt;characteristicValue&gt;XXX-Nutzer&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/specification&gt;&lt;/service&gt;&lt;/businessInteractionItem&gt;&lt;businessInteractionItem&gt;&lt;entityKey&gt;&lt;keyA&gt;keyA-E164-6-2017-12-07T15-42-46&lt;/keyA&gt;&lt;keyB/&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;E.164ServiceOrderItemSpec&lt;/specificationName&gt;&lt;specificationID&gt;E.164ServiceOrderItemSpec&lt;/specificationID&gt;&lt;/specification&gt;&lt;service&gt;&lt;entityKey&gt;&lt;keyA/&gt;&lt;keyB&gt;keyB_E.164Svc_3&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;E.164&lt;/specificationName&gt;&lt;specificationID&gt;E.164&lt;/specificationID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Rufnummer&lt;/characteristicID&gt;&lt;characteristicValue&gt;600 106100569&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;istMSN0&lt;/characteristicID&gt;&lt;characteristicValue&gt;false&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Umzugsansage&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Nutzer&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-NUTZER-6-2017-12-07T15-42-46&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyB&lt;/characteristicID&gt;&lt;characteristicValue&gt;XXX-Nutzer&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/specification&gt;&lt;/service&gt;&lt;/businessInteractionItem&gt;&lt;businessInteractionItem&gt;&lt;entityKey&gt;&lt;keyA&gt;keyA-VOIP-6-2017-12-07T15-42-46&lt;/keyA&gt;&lt;keyB&gt;keyB-VoIP ServiceServiceOrderItemSpec&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;VoIP ServiceServiceOrderItemSpec&lt;/specificationName&gt;&lt;specificationID&gt;VoIP ServiceServiceOrderItemSpec&lt;/specificationID&gt;&lt;/specification&gt;&lt;service&gt;&lt;entityKey&gt;&lt;keyA&gt;tbd-v&lt;/keyA&gt;&lt;keyB&gt;keyB-VoIP Service&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;VoIP Service&lt;/specificationName&gt;&lt;specificationID&gt;VoIP Service&lt;/specificationID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;VTP-Domain&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;INID&lt;/characteristicID&gt;&lt;characteristicValue&gt;130149019900010000639593&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;VoIP Leistungsmerkmale&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;PreSelectionRemote&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;PreSelectionLocal&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;VoIPPlattform&lt;/characteristicID&gt;&lt;characteristicValue&gt;IMS&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Sperre&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;DKK_Sperre&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Voll_Sperre_VoIP&lt;/characteristicID&gt;&lt;characteristicValue&gt;false&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Voll_Sperre_ISP&lt;/characteristicID&gt;&lt;characteristicValue&gt;false&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;GassenSperre_VoIP&lt;/characteristicID&gt;&lt;characteristicValue&gt;false&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/specification&gt;&lt;/service&gt;&lt;/businessInteractionItem&gt;&lt;businessInteractionItem&gt;&lt;entityKey&gt;&lt;keyA&gt;keyA-NUTZER-6-2017-12-07T15-42-46&lt;/keyA&gt;&lt;keyB&gt;keyB-NutzerServiceOrderItemSpec&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;NutzerServiceOrderItemSpec&lt;/specificationName&gt;&lt;specificationID&gt;NutzerServiceOrderItemSpec&lt;/specificationID&gt;&lt;/specification&gt;&lt;service&gt;&lt;entityKey&gt;&lt;keyA&gt;phaf.guid.100049016071215420200001&lt;/keyA&gt;&lt;keyB&gt;XXX-Nutzer&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;Nutzer&lt;/specificationName&gt;&lt;specificationID&gt;Nutzer&lt;/specificationID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;GUID&lt;/characteristicID&gt;&lt;characteristicValue&gt;100049016071215420200001&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EMailAlias&lt;/characteristicID&gt;&lt;characteristicValue&gt;my@email.com&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Language&lt;/characteristicID&gt;&lt;characteristicValue&gt;de_DE&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;VOIP Credentials&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;PasswortGeaendert&lt;/characteristicID&gt;&lt;characteristicValue&gt;false&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Auth-Methods&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Profilname&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;istHauptnutzer&lt;/characteristicID&gt;&lt;characteristicValue&gt;true&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Rufnummern&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Access Credentials&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Auth-Data&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Anschlusskennung&lt;/characteristicID&gt;&lt;characteristicValue&gt;TestAK&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Password&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Passwort-encrypted&lt;/characteristicID&gt;&lt;characteristicValue&gt;XXX&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Pwd-Provider-Kennung&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Probewort&lt;/characteristicID&gt;&lt;characteristicValue&gt;Test&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;User-Auth-Required&lt;/characteristicID&gt;&lt;characteristicValue&gt;1&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Auth-Methods&lt;/characteristicID&gt;&lt;characteristicValue&gt;0&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;IP Adresse&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Anschlusskennung&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;ist statisch&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;IPv4Adress&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;IPv4Netmask&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;IPv6Prefix&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;IPv6Prefixleng&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;DelegationIPv6Prefix&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;DelegationIPv6PrefixLeng&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;TunnelProfilName&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Bandbreite garantiert Downstream&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Bandbreite garantiert Upstream&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Line ID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/specification&gt;&lt;/service&gt;&lt;/businessInteractionItem&gt;&lt;businessInteractionItem&gt;&lt;entityKey&gt;&lt;keyA&gt;keyA-MEDIATION-6-2017-12-07T15-42-46&lt;/keyA&gt;&lt;keyB&gt;keyB-MediationServiceOrderItemSpec&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;MediationServiceOrderItemSpec&lt;/specificationName&gt;&lt;specificationID&gt;MediationServiceOrderItemSpec&lt;/specificationID&gt;&lt;/specification&gt;&lt;service&gt;&lt;entityKey&gt;&lt;keyB&gt;XXX-Mediation&lt;/keyB&gt;&lt;/entityKey&gt;&lt;specification&gt;&lt;specificationName&gt;Mediation&lt;/specificationName&gt;&lt;specificationID&gt;Mediation&lt;/specificationID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;RequestArt&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Request-ID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Transaktion&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Subscriber-ID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;TOID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;BKTO&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Subscription-ID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Aenderungstermin&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Mediation_Profile_Typ&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;CFS_Referenzen&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;CFS-ID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;CFSS-ID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;RFS-ID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Mediation_Characteristic&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;VoIP_Characteristic&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;INID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;VTP-Domain&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;User_Profile_Characteristic&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;ServiceProfil_ID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Nutzer&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;GUID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Profilname&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;E-Mail_Alias&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;IMPU&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;IMPU.SIP-URI&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;IMPU.TEL-URI&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;IMPI&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Access_Characteristic&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Anschlussvariante&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;CVLAN-ID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Line-ID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Bandbreite_Anschluss&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;A10NSP_Characterstic&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;V├äÔÇÜ─╣ÔÇ║P_Public_Referenz_Nr&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;SubscriptionID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;NGN IC_Characteristic&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;FNI&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Carrier-ID&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;ICP Name&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/specification&gt;&lt;/service&gt;&lt;/businessInteractionItem&gt;&lt;businessInteractionItem&gt;&lt;entityKey&gt;&lt;keyA&gt;keyA-TA IDM Diensteberechtigung bereitstellen&lt;/keyA&gt;&lt;/entityKey&gt;&lt;state&gt;&lt;value&gt;incomplete&lt;/value&gt;&lt;/state&gt;&lt;specification&gt;&lt;specificationName&gt;IDM Diensteberechtigung bereitstellen&lt;/specificationName&gt;&lt;specificationID&gt;IDM Diensteberechtigung bereitstellen&lt;/specificationID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;SeamlessCallNumberTransfer&lt;/characteristicID&gt;&lt;characteristicValue&gt;0&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Content&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-CONTENT-6-2017-12-07T15-42-46&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyB&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyB-ISP_Content_ServiceServiceOrderItemSpec&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;VoIP&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-VOIP-6-2017-12-07T15-42-46&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyB&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;AAA_Control&lt;/characteristicID&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Nutzer&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-NUTZER-6-2017-12-07T15-42-46&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyB&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Mediation&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-MEDIATION-6-2017-12-07T15-42-46&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyB&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;OIS_Meldung&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Name&lt;/characteristicID&gt;&lt;characteristicValue&gt;30&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Description&lt;/characteristicID&gt;&lt;characteristicValue&gt;THNF erteilt&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Time&lt;/characteristicID&gt;&lt;characteristicValue&gt;2017-12-07T15:42:46.000Z&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Originator&lt;/characteristicID&gt;&lt;characteristicValue&gt;IDM-A&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;CRM_OrderID&lt;/characteristicID&gt;&lt;characteristicValue&gt;60712154200&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;AdditionalData&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Sealer&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Anschlusskennung&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Passwort&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;BenutzerPIN&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Probewort&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;TelefoniePasswort&lt;/characteristicID&gt;&lt;characteristicValue/&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/specification&gt;&lt;/businessInteractionItem&gt;&lt;businessInteractionItem&gt;&lt;entityKey&gt;&lt;keyA&gt;607121542-0000-0000-a0000-0000203-TA_NutzerLesen&lt;/keyA&gt;&lt;/entityKey&gt;&lt;state&gt;&lt;value&gt;incomplete&lt;/value&gt;&lt;/state&gt;&lt;specification&gt;&lt;specificationName&gt;E.164 Nutzer Zuordnung lesen&lt;/specificationName&gt;&lt;specificationID&gt;E.164 Nutzer Zuordnung lesen&lt;/specificationID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Nutzer&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-NUTZER-6-2017-12-07T15-42-46&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyB&lt;/characteristicID&gt;&lt;characteristicValue&gt;XXX-Nutzer&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;Rufnummern&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-E164-6-2017-12-07T15-42-46&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyB&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyB_E.164Svc_1&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-E164-6-2017-12-07T15-42-46&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyB&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyB_E.164Svc_2&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-E164-6-2017-12-07T15-42-46&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyB&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyB_E.164Svc_3&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;VoIP&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;EntityReference&lt;/characteristicID&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyA&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyA-VOIP-6-2017-12-07T15-42-46&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;characteristic&gt;&lt;characteristicID&gt;keyB&lt;/characteristicID&gt;&lt;characteristicValue&gt;keyB-VoIP Service&lt;/characteristicValue&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/characteristic&gt;&lt;/specification&gt;&lt;/businessInteractionItem&gt;&lt;/bomtypes:productionPlan&gt;&lt;/ns1:completeProductionPlan&gt;&lt;/svctypes:data&gt;&lt;/ns0:completeProductionPlan&gt;&lt;/soapenv:Body&gt;&lt;/soapenv:Envelope&gt;</pre>
+                </div>
+                <div class="tab-pane" id="QueueProvider-64416-response">
+                  <div class="btn-group">
+                    <a class="pre-copy btn btn-default" role="button" data-clipboard-target="QueueProvider-64416-response-pre" href="#QueueProvider-64416-response-pre">
+                      <span class="glyphicon glyphicon-file" aria-hidden="true"><!--  --></span> 
+                      <span>Kopieren</span></a>
+                    <a class="pre-maximize btn btn-default" role="button" href="#QueueProvider-64416-response-pre">
+                      <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"><!--  --></span> 
+                      <span>Maximieren</span></a>
+                  </div>
+                  <pre class="pre-scrollable" id="QueueProvider-64416-response-pre">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+&lt;SOAP-ENV:Header xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"/&gt;
+&lt;SOAP-ENV:Body xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+&lt;completeProductionPlanError xmlns="http://services.tdeu.telekom.net/ServAndResMgmt/TechOrderMgmt/ProductionFulfillmentConsumer_v01.00" xmlns:ns2="http://schemas.telekom.net/csdg_v01.01" xmlns:ns3="http://services.tdeu.telekom.net/ServAndResMgmt/TechOrderMgmt/ProductionFulfillmentConsumer_v01.00/types" xmlns:ns4="http://system-services.t-home.telekom.de/ServiceManagement/OIS_Services_v01.00/common" xmlns:ns5="http://system-services.t-home.telekom.de/ServiceManagement/TechnicalOrderManagement/ProductionFulfillment_v01.01/types"&gt;
+&lt;ns3:context&gt;
+&lt;ns2:technicalContext&gt;
+&lt;ns2:from&gt;de.telekom.ngssm.oss.idm.IDM:IDM&lt;/ns2:from&gt;
+&lt;ns2:routingInfo&gt;de.telekom.ngssm.oss.idm.IDM:IDM:ProductionFulfillmentConsumer_SMKFF&lt;/ns2:routingInfo&gt;
+&lt;ns2:messageId&gt;607121542-0000-0000-a0000-0000203-cp&lt;/ns2:messageId&gt;
+&lt;ns2:currentSenderTimestampUTC&gt;2017-12-07T14:57:07.397Z&lt;/ns2:currentSenderTimestampUTC&gt;
+&lt;ns2:expiryOffsetInMillis&gt;0&lt;/ns2:expiryOffsetInMillis&gt;
+&lt;/ns2:technicalContext&gt;
+&lt;ns2:businessContext&gt;
+&lt;ns2:processId&gt;607121542-0000-0000-a0000-0000203-cp&lt;/ns2:processId&gt;
+&lt;ns2:processTypeId&gt;IDMA_FULFILLMENT&lt;/ns2:processTypeId&gt;
+&lt;/ns2:businessContext&gt;
+&lt;/ns3:context&gt;
+&lt;ns3:data&gt;
+&lt;ns5:completeProductionPlanError&gt;
+&lt;ns5:messageID&gt;
+&lt;ns4:value&gt;607121542-0000-0000-a0000-0000203-cp&lt;/ns4:value&gt;
+&lt;/ns5:messageID&gt;
+&lt;ns5:OISException&gt;
+&lt;ns4:characteristicID&gt;OISError&lt;/ns4:characteristicID&gt;
+&lt;ns4:characteristic&gt;
+&lt;ns4:characteristicID&gt;Name&lt;/ns4:characteristicID&gt;
+&lt;ns4:characteristicValue&gt;5001&lt;/ns4:characteristicValue&gt;
+&lt;/ns4:characteristic&gt;
+&lt;ns4:characteristic&gt;
+&lt;ns4:characteristicID&gt;ProbableCause&lt;/ns4:characteristicID&gt;
+&lt;ns4:characteristicValue/&gt;
+&lt;/ns4:characteristic&gt;
+&lt;ns4:characteristic&gt;
+&lt;ns4:characteristicID&gt;Description&lt;/ns4:characteristicID&gt;
+&lt;ns4:characteristicValue&gt;Keine VoIP Instanz für guid '100049016071215420200001' im Bestand gefunden&lt;/ns4:characteristicValue&gt;
+&lt;/ns4:characteristic&gt;
+&lt;ns4:characteristic&gt;
+&lt;ns4:characteristicID&gt;Time&lt;/ns4:characteristicID&gt;
+&lt;ns4:characteristicValue&gt;2017-12-07T15:57:07+01:00&lt;/ns4:characteristicValue&gt;
+&lt;/ns4:characteristic&gt;
+&lt;ns4:characteristic&gt;
+&lt;ns4:characteristicID&gt;Originator&lt;/ns4:characteristicID&gt;
+&lt;ns4:characteristicValue&gt;IDM-A&lt;/ns4:characteristicValue&gt;
+&lt;/ns4:characteristic&gt;
+&lt;ns4:characteristic&gt;
+&lt;ns4:characteristicID&gt;AdditionalInformation&lt;/ns4:characteristicID&gt;
+&lt;ns4:characteristicValue/&gt;
+&lt;/ns4:characteristic&gt;
+&lt;ns4:characteristic&gt;
+&lt;ns4:characteristicID&gt;CRMAuftragsNummer&lt;/ns4:characteristicID&gt;
+&lt;ns4:characteristicValue&gt;60712154200&lt;/ns4:characteristicValue&gt;
+&lt;/ns4:characteristic&gt;
+&lt;ns4:characteristic&gt;
+&lt;ns4:characteristicID&gt;PreferedrepairAction&lt;/ns4:characteristicID&gt;
+&lt;ns4:characteristicValue/&gt;
+&lt;/ns4:characteristic&gt;
+&lt;/ns5:OISException&gt;
+&lt;/ns5:completeProductionPlanError&gt;
+&lt;/ns3:data&gt;
+&lt;/completeProductionPlanError&gt;
+&lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript" src="Auftr%C3%A4ge%20-%20IDM-Adapter-Dateien/ZeroClipboard.js"><!-- --></script>
+      <script type="text/javascript">
+        var clip = new ZeroClipboard($(".pre-copy"), {
+            moviePath: /*[[@{/resources/js/ZeroClipboard.swf}]]*/ 'ZeroClipboard.swf'
+        });
+        $('.pre-maximize').click(function() {
+          $(this).toggleClass('active');
+          var elem = $(this).closest('.tab-pane').find('pre');
+          elem.toggleClass('pre-scrollable');
+        });
+        
+      </script>
+    
+        </div>
+      </div>
+	</div><div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 1px; height: 1px; z-index: 999999999;"><object id="global-zeroclipboard-flash-bridge" name="global-zeroclipboard-flash-bridge" type="application/x-shockwave-flash" data="Auftr%C3%A4ge%20-%20IDM-Adapter-Dateien/ZeroClipboard.swf" height="100%" width="100%"><param name="allowScriptAccess" value="sameDomain"><param name="allowNetworking" value="all"><param name="menu" value="false"><param name="wmode" value="transparent"><param name="flashvars" value="trustedOrigins=10.171.116.61%3A8085%2C%2F%2F10.171.116.61%3A8085%2Chttp%3A%2F%2F10.171.116.61%3A8085&amp;swfObjectId=global-zeroclipboard-flash-bridge"></object></div>
+
+</body></html>

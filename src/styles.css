@@ -35,8 +35,26 @@ dd
     width: 150px;
 }
 */
+/* #region definition liste horizontal machen 
 dl.grid {
   display: flex; flex-wrap: wrap;
 }
-.grid dt {width: 220px; }
+.grid dt {width: 220px; text-align:  right; margin-right: 10px;}
 .grid dd { width: calc(100% - 246px);}
+/* #endregion */
+
+.vertical-center {
+  display: inline-block;
+  vertical-align: middle !important;
+  float: none;
+}
+.vertical-top {
+  display: inline-block;
+  vertical-align: top !important;
+  float: none;
+}
+.vertical-bottom {
+  display: inline-block;
+  vertical-align: bottom  !important;
+  float: none;
+}

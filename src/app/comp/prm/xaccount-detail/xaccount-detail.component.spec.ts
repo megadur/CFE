@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { XerrorComponent } from './xerror.component';
+import { XAccountDetailComponent } from './xaccount-detail.component';
 
-describe('XerrorComponent', () => {
-  let component: XerrorComponent;
-  let fixture: ComponentFixture<XerrorComponent>;
+describe('XAccountDetailComponent', () => {
+  let component: XAccountDetailComponent;
+  let fixture: ComponentFixture<XAccountDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ XerrorComponent ]
+      declarations: [ XAccountDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(XerrorComponent);
+    fixture = TestBed.createComponent(XAccountDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -22,5 +22,4 @@ describe('XerrorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
 });

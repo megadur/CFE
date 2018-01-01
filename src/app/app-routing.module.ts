@@ -16,12 +16,13 @@ import { NutzermgmtComponent } from './comp/wrt/nutzermgmt/nutzermgmt.component'
 import { ProduktComponent } from './comp/prm/produkt/produkt.component';
 import { SnEinzelComponent } from './comp/wrt/sn-einzel/sn-einzel.component';
 import { SnListeComponent } from './comp/wrt/sn-liste/sn-liste.component';
+import { XAccountComponent }  from './comp/prm/xaccount/xaccount.component';
 import { XAuftragComponent }  from './comp/prm/xauftrag/xauftrag.component';
 import { XBestandComponent }  from './comp/prm/xbestand/xbestand.component';
 import { XErrorComponent }  from './comp/prm/xerror/xerror.component';
 
 const routes: Routes = [
-  { path: 'account', component: AccountComponent },
+  { path: 'xaccount', component: XAccountComponent },
   { path: 'account-detail/:id', component: AccountDetailComponent },
   { path: 'auswertung', component: AuswertungComponent },
   { path: 'auftrag', component: AuftragComponent },

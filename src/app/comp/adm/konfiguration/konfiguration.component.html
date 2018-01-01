@@ -1,3 +1,72 @@
-<p>
-  konfiguration works!
-</p>
+<div class="container-fluid" role="main" aria-labelledBy="order" id="content">
+
+  <div class="row">
+    <div class="col">
+      <H1 class="sr-only">
+        Auswertung
+      </H1>
+
+    </div>
+  </div>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="ZPIRetry-tab" data-toggle="tab" href="#ZPIRetry" role="tab" aria-controls="ZPIRetry" aria-selected="true">ZPI Retry</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="SLUP-tab" data-toggle="tab" href="#SLUP" role="tab" aria-controls="SLUP" aria-selected="false">SLUP Begrenzer</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="Kampagne-tab" data-toggle="tab" href="#Kampagne" role="tab" aria-controls="Kampagne" aria-selected="false">Kampagnensteuerung</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="ZPIRetry" role="tabpanel" aria-labelledby="ZPIRetry-tab">ZPIRetry
+      <form class="border border-primary">
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="Menge">Menge pro Intervall</label>
+            <input type="text" class="form-control" id="Menge" placeholder="1...50">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="Intervall">Intervall in sec.</label>
+            <input type="text" class="form-control" id="Intervall" placeholder="-1...300">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="Timeout">Timeout in min.</label>
+            <input type="text" class="form-control" id="Timeout" placeholder="1...360">
+          </div>
+          <div class="col-md-3 align-self-center">
+
+            <button type="submit" class="btn btn-primary align-bottom" id="Speichern">Speichern</button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="tab-pane fade col-6" id="SLUP" role="tabpanel" aria-labelledby="SLUP-tab">SLUP...
+      <form>
+        <div class="form-group row">
+          <label for="menge" class="col-sm-8 col-form-label">Menge pro Intervall</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="menge" placeholder="5...120">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="intervall" class="col-sm-8 col-form-label">Aufrufe pro sec.</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="intervall" placeholder="1...50">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Speichern</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+    <div class="tab-pane fade" id="Kampagne" role="tabpanel" aria-labelledby="Kampagne-tab">Kampagne...</div>
+  </div>
+
+</div>

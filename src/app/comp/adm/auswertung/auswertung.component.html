@@ -1,3 +1,51 @@
-<p>
-  auswertung works!
-</p>
+<div class="container-fluid" role="main" aria-labelledBy="order" id="content">
+
+  <div class="row">
+    <div class="col">
+      <H1  class="sr-only">
+        Auswertung
+      </H1>
+
+    </div>
+  </div>
+
+  <form class="form-inline">
+    <div class="form-group mx-4">
+      <label class="sr-only" for="ID">GUID, SO-ID</label>
+      <input type="text" class="form-control mb-2 mr-sm-2" id="ID" placeholder="...">
+    </div>
+    <div class="form-group mx-4">
+      <label class="my-1 mr-2" for="Status">Status</label>
+      <select class="custom-select my-1 mr-sm-2" id="Status">
+        <option selected>...</option>
+        <option value="1">Created</option>
+        <option value="10">ErrorInCommit</option>
+        <option value="11">InCancellation</option>
+        <option value="12">Aborted</option>
+        <option value="13">ErrorInCancellation</option>
+        <option value="14">InRollback</option>
+        <option value="15">ErrorInRollback</option>
+        <option value="2">InCompletion</option>
+        <option value="3">Completed</option>
+        <option value="4">ErrorInCompletion</option>
+        <option value="5">InExecution</option>
+        <option value="6">Executed</option>
+        <option value="7">ErrorInExecution</option>
+        <option value="8">InCommit</option>
+        <option value="9">Commited</option>
+            </select>
+    </div>
+    <div class="form-group mx-4 ">
+      <label for="date">Example date</label>
+      <input type="date" id="date" />
+    </div>
+    <div class="form-group mx-4 ">
+      <label for="time">Example Time</label>
+      <input type="time" id="time" />
+    </div>
+    <div class="form-group mx-4 ">
+      <label class="sr-only" for="Suchen">Suchen</label>
+      <button type="submit" class="btn" id="Suchen">Suchen</button>
+    </div>
+  </form>
+</div>

@@ -1,58 +1,33 @@
-<div class="container">
+<div class="container-fluid" role="main" aria-labelledBy="order" id="content">
 
-<div class="row">
-  <div class="col">
-    <p>
-      katalog works!
-    </p>
+  <div class="row">
+    <div class="col">
+      <p>
+        katalog works!
+      </p>
+      </div>
+  </div>
 
-  </div>
-</div>
-<form class="" >
-    <div class="form-group row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
-          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-        </div>
+  <form class="form-inline">
+    <div class="form-group mx-4">
+        <label class="btn btn-primary" for="my-file-selector">
+            <input id="my-file-selector" type="file" style="display:none" 
+            onchange="$('#upload-file-info').html(this.files[0].name)">
+            Datei auswählen
+        </label>
+        <span class='label label-info' id="upload-file-info"></span>
       </div>
-  <div class="form-group row">
-    <div class="col">
-      <div class="form-group">
-        <label for="FileUpload">Datei auswählen</label>
-        <input type="file" class="form-control-file" id="FileUpload">
-      </div>
+    <div class="form-group mx-4">
+      <label class="sr-only" for="Upload">Upload </label>
+      <button type="submit" class="btn" id="Upload">Upload CSV</button>
     </div>
-    <div class="col">
-      <div class="form-group">
-        <label for="Upload">Upload </label>
-        <button type="submit" class="btn" id="Upload">Upload</button>
-      </div>
+    <div class="form-group mx-4 ">
+      <label class="sr-only" for="Download">Download </label>
+      <button type="submit" class="btn" id="Download">Download CSV</button>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-<form class="form-inline">
-    <div class="form-group mb-2">
-      <label for="staticEmail2" class="sr-only">Email</label>
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+    <div class="form-group mx-4 ">
+      <label class="sr-only" for="Import">Import </label>
+      <button type="submit" class="btn" id="Import">Import Katalog</button>
     </div>
-    <div class="form-group mx-sm-3 mb-2">
-      <label for="inputPassword2" class="sr-only">Password</label>
-      <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-    </div>
-    <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
   </form>
 </div>

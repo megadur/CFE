@@ -5,35 +5,35 @@
       <h1 class="sr-only" id="order">Aufträge</h1>
     </div>
   </div>
-
-  <!-- Suchfeld -->
-  <div class="row">
-    <div class="col-md-6">
-      <form method="get" action="/idma-callcenter/orders" role="search">
-        <div class="form-group">
-          <label for="search">IDM-Adapter intern</label>
-          <div class="input-group">
-            <input type="text" class="form-control" required="required" name="query" id="search" placeholder="Auftragsnummer eingeben"
-              value="" maxlength="100" />
-            <label for="system" class="sr-only">order.search.system</label>
-            <select class="selectpicker" data-width="auto" id="system" name="type">
-              <option selected="selected" value="IDMA">IDM-Adapter intern</option>
-              <option value="EXT">IDM-Adapter extern</option>
-              <option value="SMF">SMK-FF</option>
-              <option value="CRM">CRM-T</option>
-              <option value="BSSOE">BSSOE</option>
-              <option value="DKK">DKK</option>
-              <option value="SNR">Sofortnutzungsref.</option>
-              <option value="MISC">Sonstiges</option>
-            </select>
-            <span class="input-group-btn">
-              <button type="submit" class="btn btn-primary">Suchen</button>
-            </span>
+  
+  <form method="get" action="/idma-callcenter/orders" role="search">
+    <!-- Suchfeld -->
+    <div class="row">
+      <div class="col-md-8">
+          <div class="form-group">
+            <label for="search">IDM-Adapter intern</label>
+            <div class="input-group">
+              <input type="text" class="form-control" required="required" name="query" id="search" placeholder="Auftragsnummer eingeben"
+                value="" maxlength="100" />
+              <label for="system" class="sr-only">order.search.system</label>
+              <select class="selectpicker" data-width="auto" id="system" name="type">
+                <option selected="selected" value="IDMA">IDM-Adapter intern</option>
+                <option value="EXT">IDM-Adapter extern</option>
+                <option value="SMF">SMK-FF</option>
+                <option value="CRM">CRM-T</option>
+                <option value="BSSOE">BSSOE</option>
+                <option value="DKK">DKK</option>
+                <option value="SNR">Sofortnutzungsref.</option>
+                <option value="MISC">Sonstiges</option>
+              </select>
+               <span class="input-group-btn ml-4 bottom-align-text" style=" vertical-align: bottom; float: none;">
+                <button type="submit" class="btn btn-primary bottom-align-text" >Suchen</button>
+              </span>
+            </div>
           </div>
-        </div>
-      </form>
+      </div>
     </div>
-  </div>
 
-
+  </form>
+ 
 </div>

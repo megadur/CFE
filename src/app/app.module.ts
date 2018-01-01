@@ -47,6 +47,8 @@ import { SnListeComponent } from './comp/wrt/sn-liste/sn-liste.component';
 import { KampagneComponent } from './comp/wrt/kampagne/kampagne.component';
 import { NutzermgmtComponent } from './comp/wrt/nutzermgmt/nutzermgmt.component';
 import { AuftragComponent } from './comp/prm/auftrag/auftrag.component';
+import { XAccountComponent } from './comp/prm/xaccount/xaccount.component';
+import { XAccountDetailComponent } from './comp/prm/xaccount-detail/xaccount-detail.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import { AuftragComponent } from './comp/prm/auftrag/auftrag.component';
     KatalogComponent,
     ProduktDetailComponent,
     XErrorComponent,
-    AuftragComponent
+    AuftragComponent,
+    XAccountComponent,
+    XAccountDetailComponent
   ],
   imports: [
     BrowserModule,
