@@ -2,7 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 
 import { XBestandService } from './xbestand.service';
 
-describe('XbestandService', () => {
+describe('XBestandService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [XBestandService]
