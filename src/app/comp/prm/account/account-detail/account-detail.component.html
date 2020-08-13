@@ -1,0 +1,108 @@
+<p>
+  account-detail works!
+</p>
+<div *ngIf="dbgLevel>0">
+  <div class="row">
+    <div class="col-md-12 ">
+      <h4 class="sr-only1">AccountDetail</h4>
+      <pre>{{diagnostic}}</pre>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default ">
+  <div class="panel-heading clearfix">
+    <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Kundendaten: 6041212390</h3>
+  </div>
+
+  <div class="panel-body">
+    <div class="col-md-3">
+      <!-- GUID -->
+      <div class="form-group">
+        <label for="expertise" class="col-md-4 control-label">GUID:</label>
+        <div class="col-md-8">
+          <select #selectElem (change)="setNewGUID(selectElem.value)" size='7'>
+            <option *ngFor="let a of accountListIn" [value]="a.GUID"  
+            ng-style="{'color': getStyle(e.STATUS)}"
+             >
+              {{a.GUID}}
+            </option>
+          </select>
+        </div>
+        <span id="helpBlock" class="help-block">Die Farbe bedeuten:
+          <span style="color:red;">rot</span>='inaktiv',
+          <span style="color:grey;">grau</span>='deaktiviert',
+          <span style="color:goldenrod;">gelb</span>='bestellt',
+          <span style="color:blue;">???</span>='gekündigt',
+          <span style="color:green;">grün</span>='aktiv', ...</span>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="panel panel-default">
+        <div class="panel-body bg-success">
+
+          <!-- -->
+          <div class="col-md-4">
+            <dl class="dl-horizontal dl-horizontal-left">
+              <dt id="tonr">GUID</dt>
+              <dd role="definition" aria-labelledby="tonr">
+                <strong>{{accountSel.GUID}}</strong>
+              </dd>
+              <dt id="tonr">TO-Nummer</dt>
+              <dd role="definition" aria-labelledby="tonr">{{accountSel.TO_NR}}</dd>
+              <dt id="kdnr">Kundennummer</dt>
+              <dd role="definition" aria-labelledby="kdnr">{{accountSel.KDNR}}</dd>
+              <dd role="definition" aria-labelledby="kdnr">
+                <small>Neu: --</small>
+              </dd>
+              <dd role="definition" aria-labelledby="kdnr">
+                <small>Alt: --</small>
+              </dd>
+            </dl>
+          </div>
+
+          <!-- -->
+          <div class="col-md-4">
+            <dl class="dl-horizontal dl-horizontal-left">
+              <dt id="status">Status</dt>
+              <dd role="definition" aria-labelledby="status" class="bg-success">{{accountSel.STATUS}}</dd>
+
+              <dt id="systel">Systel</dt>
+              <dd role="defintion" aria-labelledby="systel">{{accountSel.SYSTEL}}</dd>
+              <dt id="created">Erzeugt</dt>
+              <dd role="definition" aria-labelledby="created">
+                <span>{{accountSel.TS_CREATION}}</span>
+              </dd>
+              <dt id="modified">Aktualisiert</dt>
+              <dd role="definition" aria-labelledby="modified">
+                <span>{{accountSel.TS_LAST_UPDATE}}</span>
+              </dd>
+            </dl>
+          </div>
+
+          <!-- Action -->
+          <div class="col-md-6 col-lg-4">
+            <div class="form-group">
+              <label for="Resync" class="col-md-8 control-label">Nutzer resynchronisieren</label>
+              <div class="col-md-4 " id="Resync">
+                <button class="btn btn-primary form-control" type="button">
+                  <span class="glyphicon glyphicon-retweet"></span>&nbsp; Resync</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="del" class="col-md-8 control-label">nur in inaktiver Account </label>
+              <div class="col-md-4 " id="del">
+                <button class="btn btn-danger form-control" type="button">
+                  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp; ACC_DEL</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

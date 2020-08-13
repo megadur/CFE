@@ -1,39 +1,38 @@
-<div class="container-fluid" role="main" aria-labelledBy="order" id="content">
-
+<!-- Titel -->
+<div *ngIf="dbgLevel>0">
   <div class="row">
-    <div class="col-md-12">
-      <h1 class="sr-only" id="order">Aufträge</h1>
+    <div class="col-md-12 ">
+      <h4 class="sr-only1">Aufträge {{getMode()}}</h4>
+      <pre>{{diagnostic}}</pre>
     </div>
   </div>
-  
-  <form method="get" action="/idma-callcenter/orders" role="search">
-    <!-- Suchfeld -->
-    <div class="row">
-      <div class="col-md-8">
-          <div class="form-group">
-            <label for="search">IDM-Adapter intern</label>
-            <div class="input-group">
-              <input type="text" class="form-control" required="required" name="query" id="search" placeholder="Auftragsnummer eingeben"
-                value="" maxlength="100" />
-              <label for="system" class="sr-only">order.search.system</label>
-              <select class="selectpicker" data-width="auto" id="system" name="type">
-                <option selected="selected" value="IDMA">IDM-Adapter intern</option>
-                <option value="EXT">IDM-Adapter extern</option>
-                <option value="SMF">SMK-FF</option>
-                <option value="CRM">CRM-T</option>
-                <option value="BSSOE">BSSOE</option>
-                <option value="DKK">DKK</option>
-                <option value="SNR">Sofortnutzungsref.</option>
-                <option value="MISC">Sonstiges</option>
-              </select>
-               <span class="input-group-btn ml-4 bottom-align-text" style=" vertical-align: bottom; float: none;">
-                <button type="submit" class="btn btn-primary bottom-align-text" >Suchen</button>
-              </span>
-            </div>
-          </div>
-      </div>
-    </div>
+</div>
 
-  </form>
- 
+
+<!-- Suchfeld -->
+<div class="row">
+  <div class="col-md-12">
+    <app-auftrag-suche [xauftragFltIn]="xauftragFlt" (xauftragExtListOut)="hasXAuftragExtList($event)"></app-auftrag-suche>
+  </div>
+</div>
+
+<!-- Auftrag Ext Detail -->
+<div class="row">
+  <div class="col-md-12">
+    <app-auftrag-ext-list [xauftragExtListIn]="xauftragExtList" (xauftragExtOut)="hasXAuftragExt($event)"></app-auftrag-ext-list>
+  </div>
+</div>
+
+<!-- Auftrag int List -->
+<div class="row">
+  <div class="col-md-12">
+    <app-auftrag-int-list [xauftragExtIn]="xauftragExt" (xauftragOut)="hasXAuftrag($event)"></app-auftrag-int-list>
+  </div>
+</div>
+
+<!-- Protokoll  -->
+<div class="row">
+  <div class="col-md-12">
+    <app-auftrag-msg-list [xauftragExtIn]="xauftragExt"></app-auftrag-msg-list>
+  </div>
 </div>

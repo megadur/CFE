@@ -1,55 +1,53 @@
-<div class="row">
-  <div class="col">
-    <h1>Sofortnutzung Liste</h1>
-  </div>
-</div>
-<form>
+<div class="container-fluid">
+
+
   <div class="row">
+    <div class="col">
+      <h1 class="sr-only">Sofortnutzung Liste</h1>
+    </div>
+  </div>
 
-    <div class="col-4" aria-placeholder="xxx">
-      <div class="form-group">
-        <label for="exampleFormControlFile1">Example file input</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-      </div>
-    </div>
-    <div class="col-2">
-      <div class="form-group">
-        <label for="Hochladen">&nbsp;</label>
-        <button type="submit" class=" btn  btn-primary" id="Hochladen">Hochladen</button>
-      </div>
-    </div>
-    <div class="col-2">
-      <div class="form-group">
-        <label for="Export">&nbsp;</label>
-        <button type="submit" class=" btn  btn-primary" id="Export">Export</button>
-      </div>
-      <div class="form-group">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Sofortnutzung Liste</h3>
+        </div>
+        <div class="panel-body">
+          <form class="form-horizontal">
 
-     
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-          <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                Aktivierung setzten
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">undurchführbar</a>
-                <a class="dropdown-item" href="#">wiederholen</a>
+            <div class="form-group">
+              <div class="form-group">
+                <!-- statisches Mapping: EmMatNo - MpMatNo -->
+                <label class="control-label col-md-2 "> csv Datei </label>
+                <div class="col-md-4">
+                  <label class="btn btn-default" for="my-file-selector">
+                    <input id="my-file-selector" type="file" style="display:none" onchange="$('#upload-file-info').html(this.files[0].name)"> auswählen...
+                  </label>
+                  <span class='control-label text-info' id="upload-file-info">Noch keine Datei ausgewählt.</span>
+                  <p class="help-text">Die Datei zunächst auswählen und dann hochladen.</p>
+                </div>
+                <label for="Upload" class="control-label sr-only">Upload CSV</label>
+                <div class="col-md-4">
+                </div>
               </div>
             </div>
+
+            <div class="form-group">
+              <div class="col-md-offset-2  col-md-8">
+                <!--New div, offset because there is no label -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
       </div>
-      
-      <div class="col">
+      <div class="row">
+        <div class="col">
 
-        </div> 
+        </div>
+      </div>
     </div>
-  </div>
-</form>
-<div class="row">
-  <div class="col">
-
   </div>
 </div>

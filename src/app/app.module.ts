@@ -1,86 +1,171 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
-// _ALT
-import { AccountComponent } from './comp/_alt/account/account.component';
-import { BestandComponent } from './comp/_alt/bestand/bestand.component';
-import { AccountDetailComponent } from './comp/_alt/account-detail/account-detail.component';
-import { BestandDetailComponent } from './comp/_alt/bestand-detail/bestand-detail.component';
-
-// all
-import { NavComponent } from './comp/all/nav/nav.component';
-import { DashboardComponent } from './comp/all/dashboard/dashboard.component';
-import { MessagesComponent } from './comp/all/messages/messages.component';
-import { LoginComponent } from './comp/all/login/login.component';
-
+import { AppComponent } from './app.component';
 // ADM
 import { AuswertungComponent } from './comp/adm/auswertung/auswertung.component';
 import { KonfigurationComponent } from './comp/adm/konfiguration/konfiguration.component';
-import { KatalogComponent } from './comp/adm/katalog/katalog.component';
-
-// SVC
-import { AccountService } from './service/account.service';
-import { XBestandService } from './service/xbestand.service';
-import { XAuftragService } from './service/xauftrag.service';
-import { MessageService } from './service/message.service';
-
+import { DashboardComponent } from './comp/all/dashboard/dashboard.component';
+import { LoginComponent } from './comp/all/login/login.component';
+import { MessagesComponent } from './comp/all/messages/messages.component';
+// _ALT
+// all
+import { NavComponent } from './comp/all/nav/nav.component';
+import { AccountDetailComponent } from './comp/prm/account/account-detail/account-detail.component';
+import { AccountSucheComponent } from './comp/prm/account/account-suche/account-suche.component';
 // PRM
+import { AccountComponent } from './comp/prm/account/account.component';
+import {
+    AuftragExtDetailComponent
+} from './comp/prm/auftrag/auftrag-ext-detail/auftrag-ext-detail.component';
+import {
+    AuftragExtListComponent
+} from './comp/prm/auftrag/auftrag-ext-list/auftrag-ext-list.component';
+import {
+    AuftragIntListComponent
+} from './comp/prm/auftrag/auftrag-int-list/auftrag-int-list.component';
+import {
+    AuftragMsgListComponent
+} from './comp/prm/auftrag/auftrag-msg-list/auftrag-msg-list.component';
+import { AuftragSucheComponent } from './comp/prm/auftrag/auftrag-suche/auftrag-suche.component';
+import { AuftragComponent } from './comp/prm/auftrag/auftrag.component';
+import { BestandDetailComponent } from './comp/prm/bestand/bestand-detail/bestand-detail.component';
+import { BestandEditComponent } from './comp/prm/bestand/bestand-edit/bestand-edit.component';
+import { BestandComponent } from './comp/prm/bestand/bestand.component';
+import { ErrorDetailComponent } from './comp/prm/error/error-detail/error-detail.component';
+import { ErrorListComponent } from './comp/prm/error/error-list/error-list.component';
+import { ErrorSucheComponent } from './comp/prm/error/error-suche/error-suche.component';
+import { ErrorComponent } from './comp/prm/error/error.component';
+import { FehlerFilterComponent } from './comp/prm/fehler/fehler-filter/fehler-filter.component';
+import { FehlerComponent } from './comp/prm/fehler/fehler.component';
+import { FehlerbildDefComponent } from './comp/prm/fehler/fehlerbild-def/fehlerbild-def.component';
+import {
+    FehlerbildDetailComponent
+} from './comp/prm/fehler/fehlerbild-detail/fehlerbild-detail.component';
+import {
+    FehlerbildListComponent
+} from './comp/prm/fehler/fehlerbild-list/fehlerbild-list.component';
+import {
+    FehlerbildSearchComponent
+} from './comp/prm/fehler/fehlerbild-search/fehlerbild-search.component';
+import {
+    FehlerinstDetailComponent
+} from './comp/prm/fehler/fehlerinst-detail/fehlerinst-detail.component';
+import {
+    FehlerinstListComponent
+} from './comp/prm/fehler/fehlerinst-list/fehlerinst-list.component';
+import {
+    FehlerinstSearchComponent
+} from './comp/prm/fehler/fehlerinst-search/fehlerinst-search.component';
+import { KampagneEditComponent } from './comp/prm/kampagne/kampagne-edit/kampagne-edit.component';
+import {
+    KampagneListeComponent
+} from './comp/prm/kampagne/kampagne-liste/kampagne-liste.component';
+import { KampagneModComponent } from './comp/prm/kampagne/kampagne-mod/kampagne-mod.component';
+import {
+    KampagneSucheComponent
+} from './comp/prm/kampagne/kampagne-suche/kampagne-suche.component';
+import { KampagneComponent } from './comp/prm/kampagne/kampagne.component';
+import { KatalogDetailComponent } from './comp/prm/katalog/katalog-detail/katalog-detail.component';
+import { KatalogEditComponent } from './comp/prm/katalog/katalog-edit/katalog-edit.component';
+import { KatalogListeComponent } from './comp/prm/katalog/katalog-liste/katalog-liste.component';
+import { KatalogReloadComponent } from './comp/prm/katalog/katalog-reload/katalog-reload.component';
+import { KatalogSucheComponent } from './comp/prm/katalog/katalog-suche/katalog-suche.component';
+import { KatalogComponent } from './comp/prm/katalog/katalog.component';
+import { KundenAuftragComponent } from './comp/prm/kunden/kunden-auftrag/kunden-auftrag.component';
+import { KundenBestandComponent } from './comp/prm/kunden/kunden-bestand/kunden-bestand.component';
+import { KundenDetailComponent } from './comp/prm/kunden/kunden-detail/kunden-detail.component';
+import { KundenSucheComponent } from './comp/prm/kunden/kunden-suche/kunden-suche.component';
+import { KundenComponent } from './comp/prm/kunden/kunden.component';
+import { NutzerListeComponent } from './comp/prm/nutzer/nutzer-liste/nutzer-liste.component';
+import { NutzerStatusComponent } from './comp/prm/nutzer/nutzer-status/nutzer-status.component';
+import { NutzerSucheComponent } from './comp/prm/nutzer/nutzer-suche/nutzer-suche.component';
+import { NutzerComponent } from './comp/prm/nutzer/nutzer.component';
+import { ProduktDetailComponent } from './comp/prm/produkt/produkt-detail/produkt-detail.component';
 import { ProduktComponent } from './comp/prm/produkt/produkt.component';
-import { ProduktDetailComponent } from './comp/prm/produkt-detail/produkt-detail.component';
-import { XBestandComponent } from './comp/prm/xbestand/xbestand.component';
-import { XAuftragComponent } from './comp/prm/xauftrag/xauftrag.component';
-import { XauftragDetailComponent } from './comp/prm/xauftrag-detail/xauftrag-detail.component';
-import { XauftragExtDetailComponent } from './comp/prm/xauftrag-ext-detail/xauftrag-ext-detail.component';
-import { XauftragHisDetailComponent } from './comp/prm/xauftrag-his-detail/xauftrag-his-detail.component';
-import { XErrorComponent } from './comp/prm/xerror/xerror.component';
-import { XerrorDetailComponent } from './comp/prm/xerror-detail/xerror-detail.component';
-import { XmessageDetailComponent } from './comp/prm/xmessage-detail/xmessage-detail.component';
-
-// WRT
+import { NutzermgmtComponent } from './comp/wrt/nutzermgmt/nutzermgmt.component';
 import { SnEinzelComponent } from './comp/wrt/sn-einzel/sn-einzel.component';
 import { SnListeComponent } from './comp/wrt/sn-liste/sn-liste.component';
-import { KampagneComponent } from './comp/wrt/kampagne/kampagne.component';
-import { NutzermgmtComponent } from './comp/wrt/nutzermgmt/nutzermgmt.component';
-import { AuftragComponent } from './comp/prm/auftrag/auftrag.component';
-import { XAccountComponent } from './comp/prm/xaccount/xaccount.component';
-import { XAccountDetailComponent } from './comp/prm/xaccount-detail/xaccount-detail.component';
+import { SofortnutzungComponent } from './comp/wrt/sofortnutzung/sofortnutzung.component';
+// SVC
+import { AccountService } from './service/account.service';
+import { ConfigurationService } from './service/configuration.service';
+import { ErrorService } from './service/error.service';
+import { FehlerbildService } from './service/fehlerbild.service';
+import { MessageService } from './service/message.service';
+import { PagerService } from './service/pager.service';
+import { XAuftragService } from './service/xauftrag.service';
+import { XBestandService } from './service/xbestand.service';
+import { XErrorService } from './service/xerror.service';
+import { XMessageService } from './service/xmessage.service';
+
+// import { XBestandMock } from './model/x-bestand-mock';
 
 @NgModule({
     declarations: [
-        AppComponent,
         AccountComponent,
-        BestandComponent,
-        ProduktComponent,
-        NavComponent,
-        DashboardComponent,
         AccountDetailComponent,
+        AccountSucheComponent,
+        AppComponent,
+        AuftragComponent,
+        AuftragExtDetailComponent,
+        AuftragExtListComponent,
+        AuftragIntListComponent,
+        AuftragMsgListComponent,
+        AuftragSucheComponent,
+        AuswertungComponent,
+        BestandComponent,
         BestandDetailComponent,
+        BestandEditComponent,
+        DashboardComponent,
+        ErrorComponent,
+        ErrorDetailComponent,
+        ErrorListComponent,
+        ErrorSucheComponent,
+        FehlerComponent,
+        FehlerFilterComponent,
+        FehlerbildDefComponent,
+        FehlerbildDetailComponent,
+        FehlerbildListComponent,
+        FehlerbildSearchComponent,
+        FehlerinstDetailComponent,
+        FehlerinstListComponent,
+        FehlerinstSearchComponent,
+        KampagneComponent,
+        KampagneEditComponent,
+        KampagneListeComponent,
+        KampagneModComponent,
+        KampagneSucheComponent,
+        KatalogComponent,
+        KatalogDetailComponent,
+        KatalogEditComponent,
+        KatalogListeComponent,
+        KatalogReloadComponent,
+        KatalogSucheComponent,
+        KonfigurationComponent,
+        KundenAuftragComponent,
+        KundenBestandComponent,
+        KundenComponent,
+        KundenDetailComponent,
+        KundenSucheComponent,
+        LoginComponent,
         MessagesComponent,
+        NavComponent,
+        NutzerComponent,
+        NutzerListeComponent,
+        NutzerStatusComponent,
+        NutzerSucheComponent,
+        NutzermgmtComponent,
+        ProduktComponent,
+        ProduktDetailComponent,
         SnEinzelComponent,
         SnListeComponent,
-        AuswertungComponent,
-        KonfigurationComponent,
-        KampagneComponent,
-        NutzermgmtComponent,
-        LoginComponent,
-        XBestandComponent,
-        XAuftragComponent,
-        XauftragDetailComponent,
-        XauftragExtDetailComponent,
-        XauftragHisDetailComponent,
-        XerrorDetailComponent,
-        XmessageDetailComponent,
-        KatalogComponent,
-        ProduktDetailComponent,
-        XErrorComponent,
-        AuftragComponent,
-        XAccountComponent,
-        XAccountDetailComponent
+        SofortnutzungComponent,
+
+
     ],
     imports: [
         BrowserModule,
@@ -88,7 +173,24 @@ import { XAccountDetailComponent } from './comp/prm/xaccount-detail/xaccount-det
         HttpClientModule,
         AppRoutingModule
     ],
-    providers: [AccountService, MessageService, XBestandService, XAuftragService],
+    providers: [
+        AccountService,
+        ConfigurationService,
+        ErrorService,
+        FehlerbildService,   
+        MessageService,
+        XAuftragService,
+        XBestandService,
+        XErrorService,
+        XMessageService,
+        PagerService
+    ],
+    exports:[
+        NavComponent,
+    ],
+    schemas:[
+    ],
+    entryComponents: [AppComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
