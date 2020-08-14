@@ -115,6 +115,7 @@ export class FehlerFilterComponent implements OnInit {
         */
         //      .subscribe(a => this.account = a);
     }
+    onSubmit(){}
     // TODO: Remove this when we're done
     get diagnostic() {
         let sRet = 'app-fehlerinst-list';

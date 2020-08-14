@@ -5,6 +5,7 @@ import * as myGlobals from '../../../../globals'; //<==== this one
 import { XBestand } from '../../../../model/x-bestand';
 import { XAuftrag } from '../../../../model/x_auftrag';
 import { XAuftragService } from '../../../../service/xauftrag.service';
+import { XAuftragExt } from 'src/app/model/x_auftrag_ext';
 
 @Component({
     selector: 'app-auftrag-ext-detail',
@@ -15,13 +16,13 @@ export class AuftragExtDetailComponent implements OnInit {
     private _xbestand: XBestand;
 
     constructor(private aService: XAuftragService, private router: Router) { }
-    xauftragList: XAuftrag[];
-    xauftrag: XAuftrag;
+    xauftragList: XAuftragExt[];
+    xauftrag: XAuftragExt;
     dbgLevel: number;
 
     ngOnInit() {
         this.dbgLevel = myGlobals.dbgLevel;
-        this.xauftrag = new XAuftrag();
+        this.xauftrag = new XAuftragExt();
     }
 
     @Input() set xbestandIn(x: XBestand) {

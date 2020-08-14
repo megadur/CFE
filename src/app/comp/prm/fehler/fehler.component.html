@@ -72,7 +72,7 @@
     <div role="tabpanel" class="tab-pane active" id="FI">
       <div class="row">
         <div class="col-md-10">
-          <app-fehlerinst-search [xerrorListIn]="xerrorList" (xerrorListOut)="hasXerrorList($event)"></app-fehlerinst-search>
+          <app-fehlerinst-search [xerrorListIn]="xerrorList" (xerrorListOut)="hasXErrorList($event)"></app-fehlerinst-search>
         </div>
         <div class="col-md-2 well well-sm">
           <p>3xx</p>
@@ -96,7 +96,7 @@
     <div role="tabpanel" class="tab-pane" id="FB">
       <div class="row">
         <div class="col-md-10">
-          <app-fehlerbild-search [fehlerbildListIn]="fehlerbildList" (fehlerbildListOut)="hasFehlerbildist($event)"></app-fehlerbild-search>
+          <app-fehlerbild-search [fehlerbildListIn]="fehlerbildList" (fehlerbildListOut)="hasFehlerbildList($event)"></app-fehlerbild-search>
         </div>
         <div class="col-md-2 well">
           <p>3xxt</p>
@@ -144,7 +144,7 @@
   <!-- Fehlerbild-Liste -->
   <div class="col-md-6">
     <div class="collapse" id="collapseFBL">
-      <app-fehlerinst-search [xerrorListIn]="xerrorList" (xerrorListOut)="hasXerrorList($event)"></app-fehlerinst-search>
+      <app-fehlerinst-search [xerrorListIn]="xerrorList" (xerrorListOut)="hasXErrorList($event)"></app-fehlerinst-search>
     </div>
   </div>
   <!--Fehlerbilddetails -->

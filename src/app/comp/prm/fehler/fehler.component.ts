@@ -52,28 +52,28 @@ export class FehlerComponent implements OnInit {
     }
 
 
-    hasFehlerbildList(xl: Fehlerbild[]) {
+    public hasFehlerbildList(xl: Fehlerbild[]) {
         console.log('FehlerComponent:  hasFehlerbildList()');
         this.fehlerbildList = xl;
     }
-    hasXErrorList(xl: XError[]) {
+   public hasXErrorList(xl: XError[]) {
         console.log('FehlerComponent:  hasXErrorList()');
         this.xerrorList = xl;
     }
-    hasXError(x: XError) {
+    public hasXError(x: XError) {
         console.log('FehlerComponent:  hasXError()');
         this.xerror = x;
     }
-    hasFehlerbild(x: Fehlerbild) {
+    public hasFehlerbild(x: Fehlerbild) {
         console.log('FehlerComponent:  hasFehlerbild()' + x);
         this.fehlerbild = x;
     }
 
-    getFBCount() {
+    public getFBCount() {
         if (this.fehlerbildList)
             return this.fehlerbildList.length;
     }
-    getFICount() {
+    public getFICount() {
         if (this.xerrorList)
             return this.xerrorList.length;
     }

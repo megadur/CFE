@@ -1,6 +1,7 @@
 export class XAuftragExt {
     name: string;
     EO_ID: string;
+    TO_NR: string;
     ORDER_ID_CRM: string;
     ORDER_ID_BSSOE: string;
     ORDER_ID_SMF: string;

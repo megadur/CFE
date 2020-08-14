@@ -13,7 +13,7 @@ import { XAuftragService } from '../../../../service/xauftrag.service';
 })
 export class AuftragIntListComponent implements OnInit {
     dbgLevel: number;
-    private xauftragList: XAuftrag[];
+    public xauftragList: XAuftrag[];
     @Output() xauftragOut = new EventEmitter<XAuftrag>();
     xauftragExt: XAuftragExt;
     xauftrag: XAuftrag;

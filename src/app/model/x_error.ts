@@ -15,4 +15,9 @@ export class XError {
     TS_CLOSED: string;
     HANDLING: string;
     LAST_UPD: string;
+    SYSTEM: string;
+    STATUS: string;
+    SO_TYPE_ID: string;
+    SPECIAL_ORDER_FLAG_ID: string;
+    CODE_SYS: string;
 }
